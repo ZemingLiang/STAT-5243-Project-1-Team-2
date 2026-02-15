@@ -1,0 +1,36 @@
+Introduction & Data Acquisition
+
+1.1 Introduction
+
+
+1.2 Data Description
+
+The dataset used in this project consists of Reddit posts collected from the WallStreetBets subreddit. It contains 53,187 observations, where each row represents a single Reddit post and each column corresponds to a specific attribute describing the post.
+
+The main variables included in the dataset are:
+
+* **title** – the title text of the Reddit post
+* **score** – the net upvote score indicating community approval
+* **id** – a unique identifier for each post
+* **url** – the link attached to the post, which may point to external content or Reddit media
+* **comms_num** – the number of comments associated with the post
+* **created** – a Unix timestamp representing the creation time in seconds
+* **body** – the textual content of the post (may be missing or removed)
+* **timestamp** – the human-readable date and time when the post was created
+
+The dataset includes both numerical variables (such as score, number of comments, and creation timestamp), categorical/text variables (title, id, body), and temporal variables (timestamp). This mixture of data types makes the dataset suitable for demonstrating a wide range of preprocessing techniques, including handling missing values, verifying time consistency, cleaning textual content, detecting duplicates, and extracting additional temporal features such as hour, date, and day of the week.
+
+Initial inspection revealed several realistic data quality challenges. For example, some posts contain missing or removed text in the body field, timestamps appear in two different formats requiring verification, and textual content may include URLs, markdown symbols, or formatting artifacts. Addressing these issues is necessary to ensure the dataset is consistent, reliable, and ready for exploratory analysis.
+
+Overall, this dataset provides a meaningful example of real-world social media data with sufficient size, complexity, and data quality considerations, making it appropriate for demonstrating the full workflow of data acquisition, cleaning, preprocessing, and feature engineering.
+
+1.3 Data Acquisition Methodology
+
+The dataset used in this project was obtained from Kaggle, a public online repository that provides open-access datasets for research and educational purposes. The selected dataset contains posts from the Reddit subreddit *r/WallStreetBets (WSB)* covering the period from September 2020 through August 2021.
+
+According to the dataset documentation, the data consist of Reddit posts from the WallStreetBets subreddit that were downloaded from https://www.reddit.com/r/wallstreetbets/ using PRAW (the Python Reddit API Wrapper), which enables programmatic access to publicly available Reddit content and metadata. The version available on Kaggle consists of raw, minimally processed data rather than a fully structured analytical dataset. As a result, additional processing steps were required to organize the variables, verify data consistency, and prepare the dataset for analysis.
+
+For this project, we downloaded the dataset directly in CSV format from Kaggle and imported it into a Python-based analysis environment. The selected time period is particularly meaningful because it spans the historic “meme stock” phenomenon, during which retail investors coordinated large-scale trading activity in highly discussed stocks such as GameStop (GME) and AMC Entertainment. The WallStreetBets community played a central role in these events, making the dataset especially suitable for analyzing online investor discussions and engagement patterns during a period of intense market activity.
+
+Because the dataset was provided in raw form, an initial inspection was necessary to understand its structure, identify missing or inconsistent entries, and determine the required preprocessing steps. This setup closely reflects real-world data science workflows, where analysts often begin with externally collected raw data and must transform it into a clean, structured format before conducting exploratory analysis or modeling.
+
