@@ -75,7 +75,7 @@ The exploratory analysis of Reddit WallStreetBets posts from 2020 to 2021 reveal
 
 First, engagement metrics show a strong relationship between visibility and discussion. Post scores and number of comments exhibit a strong positive correlation (r ≈ 0.80), indicating that posts receiving more discussion tend to also gain higher community approval and visibility. This suggests that retail investor interest is highly collective, with popular investment ideas rapidly attracting both attention and conversation.
 
-Second, engagement differs significantly across post formats. Image-based and other non-text posts generally achieve higher median scores and stronger engagement than text-only posts. This pattern suggests that visual or meme-style content plays an important role in shaping investor attention and amplifying interest in particular investment themes, reflecting the culture of social-driven investing on WallStreetBets.
+Second, engagement differs significantly across post formats. Image-based and other non-text posts generally achieve higher median scores (median log-score > 4.0) and stronger engagement than text-only posts. This pattern suggests that visual content—likely including "YOLO" screenshots of portfolio gains or losses—plays an important role in shaping investor attention and amplifying interest in particular investment themes.
 
 Third, engagement is highly unevenly distributed. Only a very small proportion of posts (approximately 0.17%) are classified as extreme outliers in score, indicating that a limited number of viral posts account for a disproportionately large share of total community attention. These viral posts likely correspond to major market events or highly influential investment discussions that captured widespread retail interest.
 
@@ -83,6 +83,7 @@ Additionally, temporal patterns suggest that posting time may influence engageme
 
 Finally, inspection of the most highly scored and most commented posts shows that many of the top entries correspond to large discussion threads or widely shared content, reinforcing the idea that collective participation and high-visibility discussions play a central role in shaping retail investor focus on the platform.
 
+5.3 Conclusion
 Overall, the results suggest that retail investor attention on WallStreetBets is driven not only by investment topics themselves, but also by social dynamics such as discussion intensity, post format, and viral spread. These patterns highlight the importance of online community behavior in influencing which investment ideas gain traction among retail traders.
 
 
