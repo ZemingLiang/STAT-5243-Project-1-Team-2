@@ -6,58 +6,58 @@ EDA Part I
 
 From Code Output
 The cleaned dataset contains 53,187 Reddit posts and 30 variables, providing a large sample for analyzing retail investor discussions during 2020–2021.
-More than half of the posts lack body text, indicating that many WallStreetBets submissions rely primarily on titles or external links rather than long written content. This suggests that short-form communication plays a significant role in investor discussions.
-Engagement metrics such as score and comment count are highly skewed. While the median post receives relatively low engagement, a small number of posts achieve extremely high scores and comment volumes, reflecting the viral nature of certain discussions within the community.
-Most posts are text-based (about 30k), followed by image posts (~18k), while external links and videos are relatively less common. This suggests that retail investors primarily communicate through text and visual content rather than external media.
-Posting activity is heavily concentrated on Fridays, which account for the largest share of posts. This may reflect increased investor discussion toward the end of the trading week or during periods of heightened market attention.
-Approximately half of the posts contain body text, reinforcing the observation that many discussions rely primarily on short titles or media-based content.
+More than half of the posts have no body text, suggesting that many WallStreetbets rely primarily on titles or external links rather than long textual content. This suggests that brief communication plays an important role in investor discussions.
+Engagement metrics such as scores and number of comments are highly skewed. While the median post had relatively low engagement, there were a few posts that received extremely high scores and comment volume, reflecting the viral nature of certain discussions within the community.
+Most posts are text-based (about 30k), followed by image posts (about 18k), while external links and videos are relatively less common. This suggests that retail investors communicate primarily through text and visual content rather than external media.
+Posting activity is highly concentrated on Fridays, which is the day with the largest percentage of posts. This may reflect increased investor discussion towards the end of the trading week or during periods of high market attention.
+About half of the posts contain body text, reinforcing the observation that many discussions relied primarily on short titles or media-based content.
 
 Summary
-The cleaned dataset contains 53,187 Reddit posts and 30 variables, providing a substantial sample for analyzing retail investor discussions during 2020–2021.
-A notable characteristic of the dataset is the high proportion of missing body text, with more than half of the posts lacking detailed written content. This indicates that many WallStreetBets discussions rely primarily on titles, images, or links rather than long-form text.
-Engagement metrics such as score and comment count are highly skewed, with most posts receiving limited attention while a small number achieve extremely high visibility. This long-tail pattern suggests that investor discussions are strongly influenced by viral posts that attract collective attention.
-In terms of content type, most posts are text-based, followed by image posts, while external links and videos are comparatively less common. This highlights the importance of short textual communication and visual content in shaping investor discussions.
-Posting activity is also uneven across the week, with Fridays showing the highest volume of posts. This pattern may reflect increased discussion near the end of the trading week or during periods of heightened market interest.
+The cleaned dataset contains 53,187 Reddit posts and 30 variables, providing a large sample for analyzing retail investor discussions over the 2020-2021 period.
+A notable feature of this dataset is the high percentage of missing body text, with more than half of the posts lacking detailed written content. This suggests that many WallStreetBets discussions rely primarily on titles, images, or links rather than long text.
+Engagement metrics such as scores and number of comments are highly skewed, with most posts receiving limited attention while a few posts gain extremely high visibility. This long-tail pattern suggests that investor discussions are strongly influenced by viral posts that attract collective attention.
+In terms of content type, most posts are text-based, followed by images, while external links and videos are relatively rare. This highlights the importance of short textual communication and visual content in shaping investor discussions.
+The volume of postings was also uneven throughout the week, with the highest volume on Fridays. This pattern may reflect increased discussion near the end of the trading week or during periods when market interest is high.
 
 EDA Part II
 
 From Code Output
 Graph 1 (Distribution of score)
-The distribution of post scores is highly right-skewed, with most posts receiving relatively low scores and a small number achieving extremely high values. This indicates that investor attention on WallStreetBets is concentrated on a limited set of highly visible posts.
+The distribution of post scores is highly right-skewed, with most posts having relatively low scores and a few posts having extremely high scores. This indicates that investor attention to WallStreetBets is focused on a limited set of highly visible posts.
 Graph 2 (Distribution of comms_num)
-The number of comments shows a similarly skewed distribution, suggesting that only a small subset of discussions generate substantial interaction while most posts receive limited engagement.
+The number of comments shows a similarly skewed distribution, indicating that only a small fraction of the discussions resulted in substantial interaction, while the majority of posts had limited engagement.
 Graph 3 (Distribution of score_log)
 After log transformation, the score distribution becomes more spread out and closer to symmetric, making it easier to compare engagement levels and analyze relationships without extreme outliers dominating.
 Graph 4 (Distribution of comms_num_log)
 The log-transformed comment counts show a more balanced distribution than raw counts, confirming that discussion activity follows a long-tail pattern and benefits from transformation for analysis.
 Graph 7 & 8 (Top categories for post_type_lumped & Top categories for post_type)
-Text posts dominate the dataset, followed by image posts, while other types are comparatively less frequent. This suggests that investor discussions are primarily driven by short-form text and visual content.
-Breaking down post types further shows that external links and videos account for a relatively small share compared to text and images, reinforcing that most community interaction occurs via native Reddit content.
+Text posts dominate the dataset, followed by image posts, while other types are comparatively less frequent. This suggests that investor discussions are primarily driven by short text and visual content.
+Further analysis of post types reveals that external links and videos account for a relatively small share compared to text and images, suggesting that most community interactions take place through native Reddit content.
 Graph 10 (Relationship: score_log vs comms_num_log)
-There is a clear positive relationship between score and comment activity (in log scale), indicating that posts receiving more votes also tend to trigger more discussion. This reflects collective attention dynamics where visibility and interaction reinforce each other.
+There is a clear positive correlation, expressed in logarithms, between score and comment activity, indicating that posts that receive more votes also tend to trigger more discussion. This reflects collective attention dynamics, where visibility and interaction reinforce each other.
 Graph 12 (Trend: Mean score_log by hour of day)
-Average engagement varies by posting hour, with higher mean scores during certain active periods and lower engagement during early-morning hours. This suggests posting time may influence visibility and interaction.
+Average engagement varies by posting time, with higher average scores during certain active periods and lower engagement during early morning hours. This suggests that posting time may affect visibility and interaction.
 Graph 13 (Trend: Mean comms_num_log by hour of day)
-Comment activity shows a similar hourly pattern, reinforcing that discussion intensity is shaped by user activity cycles and timing effects.
+Comment activity also shows a similar hourly pattern, reinforcing that discussion intensity is determined by user activity cycles and temporal effects.
 Graph 14 (Trend: Mean score_log by day of week)
-Average engagement differs across weekdays, showing that “posting volume” and “engagement per post” are not necessarily aligned. Certain days may produce fewer posts but higher average attention, potentially reflecting market-event timing or trading-week dynamics.
+Average engagement varies between weekdays, suggesting that "volume of posts" and "engagement per post" do not necessarily coincide. Certain days may have fewer posts but higher average attention, which may reflect the timing of market events or the dynamics of the trading week.
 Graph 15 (Trend: Daily mean score_log over time)
-Engagement fluctuates over time with noticeable peaks, particularly in early 2021, consistent with periods of heightened retail investor activity and major market events. This suggests external financial developments strongly shape the intensity of discussions on WallStreetBets.
+Engagement fluctuates over time, with clear peaks, especially in early 2021, coinciding with periods of increased retail investor activity and major market events. This suggests that external financial developments strongly influence the intensity of discussion about WallStreetBets.
 
 Summary
 The visual analysis of WallStreetBets posts from 2020–2021 highlights several key patterns in retail investor attention and discussion behavior.
-First, engagement on the platform is highly uneven. The distributions of post scores and comment counts show that most posts receive limited interaction, while a small number attract extremely high attention. This indicates that retail investors tend to concentrate collectively on a limited set of highly visible discussions, suggesting that investment interest is driven by a few prominent topics rather than evenly distributed across posts.
-Second, there is a strong positive relationship between post scores and comment activity. Posts that receive higher voting scores also tend to generate more discussion, demonstrating that investor attention tends to cluster: when a topic becomes popular, it attracts both visibility and active participation. This pattern reflects the collective and social nature of investment decision-making within the community.
-Third, temporal patterns suggest that investor discussions are influenced by timing and external events. Engagement levels vary across hours of the day and days of the week, indicating that posting time can affect visibility and interaction. In addition, fluctuations in average engagement over the study period, particularly noticeable peaks in early 2021, align with periods of heightened retail investor activity in financial markets. This suggests that real-world market events strongly shape online discussion intensity and investment focus.
-Finally, the dominance of text and image posts suggests that retail investors primarily share ideas and react to opportunities through short-form discussions and visual content, rather than long-form posts or external media. This highlights the fast-paced and conversational nature of investment communication within the WallStreetBets community.
-Overall, the visual evidence indicates that retail investor attention on WallStreetBets during 2020–2021 was shaped by collective engagement dynamics, timing effects, and external market events, rather than by simple structural features of individual posts.
+First, engagement on the platform is highly uneven. From the distribution of post scores and number of comments, most articles have limited interaction, while a few posrs have extremely high attention. This suggests that retail investors tend to collectively follow a limited set of highly visible discussions, suggesting that investment interest is driven by a few prominent topics rather than being evenly distributed across posts.
+Second, there is a strong positive relationship between post scores and comment activity. Posts with higher voting scores also tend to generate more discussion, indicating that investor attention tends to cluster: when a topic becomes popular, it attracts visibility and active participation. This pattern reflects the collective and social nature of investment decisions within the community.
+Third, temporal patterns suggest that investor discussions are influenced by time and external events. Engagement varies across hours of the day and days of the week, suggesting that postinh time can affect visibility and interaction. Moreover, the fluctuations in average engagement over the period under study, especially the noticeable peaks in early 2021, coincide with a period of increased retail investor activity in financial markets. This suggests that real-world market events strongly influence the intensity of online discussions and investment focus.
+Finally, the dominance of text and image posts suggests that retail investors share ideas and react to opportunities primarily through short discussions and visual content, rather than long-form posts or external media. This highlights the fast-paced and conversational nature of investment communication in the WallStreetBets community.
+Overall, the visual evidence suggests that retail investor attention to WallStreetBets over the 2020-2021 period was shaped by collective engagement dynamics, time effects, and external market events, rather than by simple structural features of individual posts.
 
 EDA Part III
 
 From Code Output
-The correlation analysis shows a strong positive relationship between the number of comments and post score, suggesting that highly discussed posts tend to receive more community support and visibility. This indicates that collective discussion plays a major role in amplifying investment-related posts.
-Posts containing visual content such as videos and images generally receive higher scores and engagement compared to text-only posts. This suggests that retail investors tend to react more strongly to visual or meme-based investment information.
-Engagement levels vary across days of the week, with higher scores and discussion activity observed on Sundays and Mondays, while Fridays show the lowest engagement. This may reflect increased investor attention during weekends and the beginning of trading weeks.
+The correlation analysis revealed a strong positive relationship between the number of comments and the post score, indicating that posts with high discussion tend to receive more community support and visibility. This indicates that collective discussion plays an important role in the expansion of investment-related posts.
+Posts containing visual content such as videos and images generally have higher scores and higher engagement than text-only posts. This suggests that retail investors tend to respond more strongly to visual or memetic based investment information.
+Engagement levels vary across days of the week, with Sundays and Mondays scoring higher and discussion activity active, while Friday was the least engaged. This may reflect increased investor attention over the weekend and at the start of the trading weeks.
 Posts without body text tend to achieve higher engagement compared to posts with detailed text content. This suggests that concise or meme-style posts may attract more immediate community reactions.
 Inspection of the highest-scoring posts shows that many are related to meme stocks such as GameStop (GME), particularly during January and February 2021. This aligns with the historical surge of retail investor coordination during the meme stock phenomenon.
 A small proportion of extreme outliers was detected in engagement metrics, representing highly viral posts that gained unusually large attention within the community.
@@ -72,16 +72,11 @@ Finally, a small proportion of extreme outliers was identified, representing hig
 
 5.2 Summary of Key Findings
 The exploratory analysis of Reddit WallStreetBets posts from 2020 to 2021 reveals several meaningful patterns in retail investor attention and engagement behavior.
-
 First, engagement metrics show a strong relationship between visibility and discussion. Post scores and number of comments exhibit a strong positive correlation (r ≈ 0.80), indicating that posts receiving more discussion tend to also gain higher community approval and visibility. This suggests that retail investor interest is highly collective, with popular investment ideas rapidly attracting both attention and conversation.
-
-Second, engagement differs significantly across post formats. Image-based and other non-text posts generally achieve higher median scores (median log-score > 4.0) and stronger engagement than text-only posts. This pattern suggests that visual content—likely including "YOLO" screenshots of portfolio gains or losses—plays an important role in shaping investor attention and amplifying interest in particular investment themes.
-
+Second, engagement differs significantly across post formats. Image-based and other non-text posts generally achieve higher median scores (median log-score > 4.0) and stronger engagement than text-only posts. This pattern suggests that visual content, which may include "YOLO" screenshots of portfolio gains or losses, plays an important role in shaping investor attention and amplifying interest in specific investment topics.
 Third, engagement is highly unevenly distributed. Only a very small proportion of posts (approximately 0.17%) are classified as extreme outliers in score, indicating that a limited number of viral posts account for a disproportionately large share of total community attention. These viral posts likely correspond to major market events or highly influential investment discussions that captured widespread retail interest.
-
-Additionally, temporal patterns suggest that posting time may influence engagement levels, with higher average scores observed during later hours compared to early morning periods. This indicates that user activity and attention may vary across the day, potentially affecting the visibility of investment discussions.
-
-Finally, inspection of the most highly scored and most commented posts shows that many of the top entries correspond to large discussion threads or widely shared content, reinforcing the idea that collective participation and high-visibility discussions play a central role in shaping retail investor focus on the platform.
+Additionally, temporal patterns suggest that posting time may influence engagement levels, with higher mean scores observed during later hours compared to early morning periods. This indicates that user activity and attention may vary across the day, potentially affecting the visibility of investment discussions.
+Finally, inspection of the most highly scored and most commented posts shows that many of the top entries correspond to large discussion threads or widely shared content, reinforcing the idea that collective participation and high-visibility discussions play an important role in shaping retail investor focus on the platform.
 
 5.3 Conclusion
 Overall, the results suggest that retail investor attention on WallStreetBets is driven not only by investment topics themselves, but also by social dynamics such as discussion intensity, post format, and viral spread. These patterns highlight the importance of online community behavior in influencing which investment ideas gain traction among retail traders.
