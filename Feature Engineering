@@ -1,0 +1,15 @@
+Feature Engineering Summary
+
+3.1 Feature Engineering
+To better capture the attention and discussion behavior patterns of retail investors, we constructed several derived features from the original WallStreetBets dataset. These engineering variables were designed to improve interpretability, enable comparison between different posts, and support engagement dynamics analysis.
+
+First, we extracted temporal features from the standardized timestamp. These include the posting hour, month, and day of week, which allow us to examine how investor discussions vary over time and whether engagement is influenced by trading cycles or user activity patterns.
+Second, we created engagement-transformed variables to address the heavy-tailed distributions of post scores and comment counts. Log-transformed versions of these variables (score_log and comms_num_log) were generated to stabilize variance and reduce the influence of extreme viral posts, making relationships and comparisons across posts more interpretable. In addition, standardized (z-score) and min–max scaled versions of key numerical variables were computed to facilitate comparison across features measured at different scales.
+Third, textual features were engineered to capture structural characteristics of posts. We computed the length of each title (title_length), which represents how much information a post title contains. We also created cleaned and NLP-ready text fields by removing URLs, numbers, and special symbols, allowing future analysis of content themes or sentiment if needed.
+Fourth, the categorical features were refined to improve analysis clarity. Rare post-type categories were grouped into a merged “Other” class (post_type_lumped) to avoid fragmentation and ensure stable comparisons across content types. In addition, a binary indicator variable (has_body) was used to distinguish posts with additional text content from those containing only titles or media, allowing us to evaluate whether longer posts are associated with different engagement patterns.
+
+Overall, these feature engineering steps transform the raw Reddit data into a structured analytical dataset that preserves meaningful behavioral signals while enabling more robust analysis of how retail investors interact with discussions related to WallStreetBets.
+
+3.2 Techniques
+The feature engineering process incorporates techniques including datetime feature extraction, log transformation of skewed engagement variables, numerical scaling, text-derived feature creation such as title length, binary indicator construction, and categorical lumping of rare posts types. These transformations help convert the raw Reddit data into structured analytical features suitable for studying investor attention patterns.
+
