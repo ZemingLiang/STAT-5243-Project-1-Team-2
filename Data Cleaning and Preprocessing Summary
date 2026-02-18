@@ -10,3 +10,6 @@ Since many Reddit posts do not contain body text,the missing body values were tr
 Finally, engagement variables such as post score and number of comments exhibit highly skewed, heavy-tailed distributions due to the presence of viral posts. Instead of removing these influential observations, we applied log transformations to stabilize the distributions and enable more interpretable comparisons across posts. Additional preparation steps included grouping rare post types into a common “Other” category and creating NLP-ready text fields for potential downstream analysis.
 
 Overall, these preprocessing steps improve data quality while preserving meaningful signals about how retail investors discuss and respond to investment ideas on WallStreetBets.
+
+2.2 Techniques
+The data cleaning pipeline incorporated a broad range of techniques covering data validation, duplicate detection, text normalization, missing-data diagnostics, outlier detection, and feature preprocessing. In total, more than thirty techniques were applied, including TF-IDF similarity checks, MNAR diagnostics for missing text, multiple outlier detection methods (IQR, Z-score, Cook’s distance), and log transformations validated using Q–Q plots and statistical tests.
