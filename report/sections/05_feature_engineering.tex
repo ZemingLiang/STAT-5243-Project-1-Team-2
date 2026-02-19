@@ -1,0 +1,14 @@
+\section{Feature Engineering Process and Justification}
+
+Feature engineering extends baseline metadata with behavioral and content-aware variables to improve analytical usability and predictive signal quality.
+
+\subsection{Constructed Feature Families}
+\begin{itemize}
+  \item Temporal and engagement-derived features (existing branch baseline).
+  \item Sentiment proxy from title text using a finance-oriented rule lexicon.
+  \item Topic features from LDA over title text to capture latent discussion themes.
+  \item Interaction-ready feature matrix used for viral-classification diagnostics.
+\end{itemize}
+
+\subsection{Justification}
+These additions improve interpretability and predictive structure by incorporating both textual semantics and engagement behavior. Diagnostic plots (ROC, precision-recall, confusion matrix, calibration, and coefficient importance) provide transparent validation of feature usefulness.
