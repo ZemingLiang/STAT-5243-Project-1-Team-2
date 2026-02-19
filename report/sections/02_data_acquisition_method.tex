@@ -1,0 +1,17 @@
+\section{Data Acquisition Methodology}
+
+The project uses the WallStreetBets Reddit post dataset distributed via Kaggle as the primary public repository source. The data was originally collected from \texttt{https://www.reddit.com/r/wallstreetbets/} using PRAW (Python Reddit API Wrapper), then shared as a CSV file for research and educational use.
+
+\subsection{Acquisition Procedure}
+\begin{enumerate}
+  \item Select an open-access dataset relevant to retail-investor discussion behavior.
+  \item Download raw CSV data from Kaggle and preserve it as the immutable source file.
+  \item Validate schema, column semantics, and temporal coverage before transformation.
+  \item Import raw data into Python environment for cleaning and preprocessing.
+\end{enumerate}
+
+\subsection{Scope and Relevance}
+The observation window (2020--2021) captures the meme-stock period, making it suitable for studying rapid shifts in community attention and engagement. The dataset includes both structured metadata and unstructured text, which supports a full preprocessing and feature-engineering workflow.
+
+\subsection{Acquisition Constraints}
+The dataset reflects available post-level metadata and does not include direct trade execution records. As a result, downstream analysis focuses on discussion and engagement proxies rather than verified transaction behavior.
