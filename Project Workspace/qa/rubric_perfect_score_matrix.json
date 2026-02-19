@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-02-19T08:48:25.436461",
+  "target": "47/47 (Advanced across all categories)",
+  "categories": [
+    {
+      "name": "Data Selection",
+      "max_points": 8,
+      "target_level": "Advanced",
+      "status": "advanced",
+      "why_advanced": [
+        "Dataset mixes structured metadata and unstructured text at scale (53,187 rows).",
+        "Quality burden includes structural missingness, heavy-tailed engagement, and temporal normalization challenges.",
+        "Real-world social-media noise requires both text and tabular preprocessing policies."
+      ],
+      "evidence": [
+        "Project Deliverables/Datasets/reddit_wsb.csv",
+        "Project Workspace/Supporting Materials/Report Sources/sections/01_intro_data_description.tex",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_01_missingness_diagnostics.json"
+      ],
+      "gaps": []
+    },
+    {
+      "name": "Data Exploration",
+      "max_points": 8,
+      "target_level": "Advanced",
+      "status": "advanced",
+      "why_advanced": [
+        "EDA includes extensive visual diagnostics across distributions, temporal patterns, and post types.",
+        "Statistical diagnostics include Spearman association, Kruskal-Wallis group test, and anomaly-rate quantification.",
+        "Interpretation and caveats are explicitly documented with effect-size context."
+      ],
+      "evidence": [
+        "Project Workspace/Supporting Materials/Report Sources/sections/04_eda.tex",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_19_post_type_median_iqr.png"
+      ],
+      "gaps": []
+    },
+    {
+      "name": "Data Pre-processing",
+      "max_points": 8,
+      "target_level": "Advanced",
+      "status": "advanced",
+      "why_advanced": [
+        "Policy decisions explicitly cover missingness, duplicates, outliers, type correction, transformations, scaling, and encoding.",
+        "Quality handling is deterministic and reproducible via code plus JSON diagnostics.",
+        "Data quality issues are addressed comprehensively without representativeness-damaging row drops."
+      ],
+      "evidence": [
+        "Project Workspace/Supporting Materials/Report Sources/sections/03_cleaning_preprocessing.tex",
+        "Project Workspace/Supporting Materials/Code Files/cleaning_workflow.py",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json"
+      ],
+      "gaps": []
+    },
+    {
+      "name": "Feature Engineering",
+      "max_points": 8,
+      "target_level": "Advanced",
+      "status": "advanced",
+      "why_advanced": [
+        "Feature set extends baseline variables with sentiment and topic-model signals.",
+        "Deterministic ablation quantifies incremental utility (baseline vs +sentiment vs +topics).",
+        "Model diagnostics include ROC/PR/confusion and explicit tradeoff/limitation discussion."
+      ],
+      "evidence": [
+        "Project Workspace/Supporting Materials/Report Sources/sections/05_feature_engineering.tex",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json",
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/figures/05_feature_ablation_comparison.png"
+      ],
+      "gaps": []
+    },
+    {
+      "name": "Written Report",
+      "max_points": 15,
+      "target_level": "Advanced",
+      "status": "advanced",
+      "why_advanced": [
+        "Report follows exact required assignment order and contains all mandatory sections.",
+        "Major claims are linked to figure and JSON artifacts through a dedicated traceability table.",
+        "Methods, findings, limitations, and future recommendations are articulated with quantitative backing."
+      ],
+      "evidence": [
+        "Project Deliverables/Report/Project1_Final_Submission.ipynb",
+        "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
+        "Project Workspace/Supporting Materials/Report Sources/main_report.tex"
+      ],
+      "gaps": []
+    }
+  ],
+  "scoring_projection": {
+    "data_pipeline_total": {
+      "max": 32,
+      "projected": 32
+    },
+    "written_report_total": {
+      "max": 15,
+      "projected": 15
+    },
+    "overall_total": {
+      "max": 47,
+      "projected": 47
+    }
+  },
+  "gate": {
+    "all_categories_advanced": true,
+    "no_partial_or_ambiguous_entries": true,
+    "pass": true
+  }
+}
