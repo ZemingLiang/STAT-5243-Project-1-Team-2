@@ -173,13 +173,25 @@
         "average_precision": 0.9998175840426733,
         "f1_at_0_5": 0.9022988505747127
       }
+    },
+    {
+      "claim_id": "FE-05",
+      "section": "05_feature_engineering",
+      "claim_text": "Topic features improve thresholded classification performance in deterministic ablation diagnostics.",
+      "figure_png": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/figures/05_feature_ablation_comparison.png",
+      "json_source": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json",
+      "metric_values": {
+        "baseline_f1_at_0_5": 0.876949740034662,
+        "baseline_plus_sentiment_topics_f1_at_0_5": 0.8846153846153846,
+        "f1_absolute_lift": 0.007665644580722543
+      }
     }
   ],
   "coverage": {
-    "total_claims": 14,
-    "claims_with_figure": 14,
-    "claims_with_json_source": 14,
-    "claims_with_metric_values": 14,
+    "total_claims": 15,
+    "claims_with_figure": 15,
+    "claims_with_json_source": 15,
+    "claims_with_metric_values": 15,
     "all_claims_have_evidence": true
   }
 }

@@ -27,6 +27,43 @@ Public repository: \url{https://github.com/ZemingLiang/STAT-5243-Project-1-Team-
 
 \input{sections/07_team_contributions.tex}
 
+\section{Figure-to-Finding Traceability}
+\begin{longtable}{p{0.12\textwidth} p{0.26\textwidth} p{0.30\textwidth} p{0.30\textwidth}}
+\toprule
+Claim ID & Finding Summary & Figure Artifact & JSON Artifact \\
+\midrule
+\endfirsthead
+\toprule
+Claim ID & Finding Summary & Figure Artifact & JSON Artifact \\
+\midrule
+\endhead
+CLN-01 & Body missingness is structural and requires explicit handling. &
+\texttt{artifacts/figures/02\_cleaning\_fig\_01\_missingness\_diagnostics.png} &
+\texttt{artifacts/json/02\_cleaning\_fig\_01\_missingness\_diagnostics.json} \\
+CLN-06 & Duplicate audit found no duplicated IDs or full rows. &
+\texttt{artifacts/figures/02\_cleaning\_fig\_01\_missingness\_diagnostics.png} &
+\texttt{artifacts/json/02\_cleaning\_policy\_metrics.json} \\
+EDA-01 & Votes and comments have strong monotonic association. &
+\texttt{artifacts/figures/03\_eda\_fig\_10\_score\_comments\_scatter.png} &
+\texttt{artifacts/json/03\_eda\_advanced\_stats.json} \\
+EDA-02 & Engagement differs significantly across post types. &
+\texttt{artifacts/figures/03\_eda\_fig\_19\_post\_type\_median\_iqr.png} &
+\texttt{artifacts/json/03\_eda\_advanced\_stats.json} \\
+EDA-03 & Viral-tail outliers are rare but influential. &
+\texttt{artifacts/figures/03\_eda\_fig\_17\_daily\_outlier\_count.png} &
+\texttt{artifacts/json/03\_eda\_advanced\_stats.json} \\
+FE-01 & Feature-stage model yields strong held-out ranking quality. &
+\texttt{artifacts/figures/04\_feature\_fig\_04\_roc\_curve.png} &
+\texttt{artifacts/json/04\_feature\_fig\_04\_roc\_curve.json} \\
+FE-02 & Thresholded viral classification is strong at 0.5 cutoff. &
+\texttt{artifacts/figures/04\_feature\_fig\_06\_confusion\_matrix.png} &
+\texttt{artifacts/json/04\_feature\_fig\_06\_confusion\_matrix.json} \\
+FE-05 & Topic features improve F1 in ablation diagnostics. &
+\texttt{artifacts/figures/05\_feature\_ablation\_comparison.png} &
+\texttt{artifacts/json/05\_feature\_ablation\_table.json} \\
+\bottomrule
+\end{longtable}
+
 \section{Representative Figures}
 \begin{figure}[h]
 \centering
