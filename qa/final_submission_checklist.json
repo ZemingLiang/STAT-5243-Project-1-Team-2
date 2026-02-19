@@ -1,5 +1,9 @@
 {
-  "generated_at": "2026-02-19T07:15:02.477241",
+  "generated_at": "2026-02-19T07:32:15.643808",
+  "gate_policy": {
+    "strict_overall_pass_requires_all_checks_true": true,
+    "note": "Notebook PDF build remains environment-dependent; LaTeX fallback PDF is included for submission packaging."
+  },
   "checks": {
     "required_paths_exist": {
       "reddit_wsb.csv": true,
@@ -38,9 +42,13 @@
     "all_member_contributions_present": true,
     "notebook_pdf_build": {
       "status": "failed_in_env",
-      "reason": "nbconvert+pandoc compatibility issue (pandoc 3.x); latex fallback used for final PDF",
-      "fallback_pdf": "submission/STAT5243_Project1_Team2_Final.pdf"
-    }
+      "strict_gate_pass": false,
+      "reason": "nbconvert+pandoc compatibility issue (pandoc 3.x); notebook PDF command may fail in some environments.",
+      "fallback_pdf": "submission/STAT5243_Project1_Team2_Final.pdf",
+      "fallback_method": "LaTeX build from report/main_report.tex"
+    },
+    "submission_pdf_present_via_latex_fallback": true
   },
-  "overall_pass": true
+  "overall_pass": false,
+  "delivery_pass_with_fallback": true
 }

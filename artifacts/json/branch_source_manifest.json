@@ -1,34 +1,30 @@
 {
-  "generated_at": "2026-02-19T06:50:38.432140",
-  "generated_on_branch": "codex/a-plus-final-integration",
+  "generated_at": "2026-02-19T07:32:45.777685",
+  "generated_on_branch": "Main-Final-Deliverable",
+  "target_branch": "Main-Final-Deliverable",
+  "target_branch_head_at_generation": "394464aeda024a9b7379ab1ed5f37fce85f6a509",
+  "source_scope": "Canonical upstream branches used for final assembly",
   "sources": {
     "origin/Intro-&-Dataset-Description": {
-      "sha": "f0408e20f3fe24535713726f2f1b0a55242a5cf7"
+      "sha": "6999e78c1e6e3db5d519c2de5b60c4a60878943a"
     },
     "origin/Data-Acquisition-Method": {
-      "sha": "68cd53d9bbaaeb2efed21671b3cb99a14752be5b"
+      "sha": "56640d972c63520a4dba440b07fbf8f0c81f6c73"
     },
     "origin/Cleaning-and-Preprocessing": {
-      "sha": "baeebc25ea4e055dacb3f2eb083d8fecdbf4b285"
+      "sha": "b1ca2e205b671842db3b49d5c8274251a2dd2350"
     },
     "origin/Exploratory-Data-Analysis-(EDA)": {
-      "sha": "29c7521fc815f830fe07fc35f4b5f4e08b69f7c5"
+      "sha": "71a8dac7a0b892f971a526a52673ffc144bb5599"
     },
     "origin/Feature-Engineering-&-Justification": {
-      "sha": "0c198598be84585fd2ab9041f266ffc110d32e63"
+      "sha": "3a2e83cf9355a7d933076902a5906eda424c34a5"
     },
     "origin/Summary-of-Findings": {
-      "sha": "678f2dcc532372e1f9d4a5b516a86753618c3bab"
+      "sha": "a3c0a47ae1c961fea78015fe66466e823caefa3e"
     },
     "origin/Challenges-Faced-&-Future-Recommendations": {
-      "sha": "ab2f4464a05385d9b0503629e053a847d6fed608"
-    },
-    "origin/Main-Final-Deliverable": {
-      "sha": "98f36b12e9d11d09c19691a24bdd7a231e214ac7"
-    },
-    "origin/main": {
-      "sha": null,
-      "note": "missing"
+      "sha": "2a2c86aa051a0e8d9a23d6cd499e06639f1f8424"
     }
   }
 }

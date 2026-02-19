@@ -19,7 +19,20 @@ python3 -m pip install -r code/requirements.txt
 bash code/run_full_workflow.sh
 ```
 
-## Build PDF from notebook
+## Build PDF (recommended)
+Use the LaTeX report source for the most stable build path:
+```bash
+cd submission
+pdflatex -interaction=nonstopmode ../report/main_report.tex
+pdflatex -interaction=nonstopmode ../report/main_report.tex
+mv main_report.pdf STAT5243_Project1_Team2_Final.pdf
+```
+
+## Build PDF from notebook (optional)
+`nbconvert --to pdf` can fail in environments with incompatible `pandoc/nbconvert` versions.
 ```bash
 jupyter nbconvert --to pdf report/Project1_Final_Submission.ipynb --output ../submission/STAT5243_Project1_Team2_Final.pdf
 ```
+
+If notebook conversion fails, use the included fallback PDF:
+`submission/STAT5243_Project1_Team2_Final.pdf`.
