@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-19T07:32:15.643808",
+  "generated_at": "2026-02-19T08:16:28.615009",
   "gate_policy": {
     "strict_overall_pass_requires_all_checks_true": true,
     "note": "Notebook PDF build remains environment-dependent; LaTeX fallback PDF is included for submission packaging."
@@ -13,7 +13,8 @@
       "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
       "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true,
       "Project Workspace/Supporting Materials/Report Sources/main_report.tex": true,
-      "Project Workspace/Supporting Materials/Report Sources/artifacts/json/branch_source_manifest.json": true
+      "Project Workspace/Supporting Materials/Report Sources/artifacts/json/branch_source_manifest.json": true,
+      "Project Workspace/qa/notebook_pdf_consistency_report.md": true
     },
     "all_required_paths_exist": true,
     "section_order_exact": true,
@@ -32,9 +33,29 @@
         "png_count": 8,
         "json_count": 8,
         "pass": true
+      },
+      "05_feature_ablation": {
+        "png_count": 1,
+        "json_count": 1,
+        "pass": true
       }
     },
     "all_parity_pass": true,
+    "trace_table_complete": {
+      "section_present": true,
+      "claims_present": {
+        "CLN-01": true,
+        "CLN-06": true,
+        "EDA-01": true,
+        "EDA-02": true,
+        "EDA-03": true,
+        "FE-01": true,
+        "FE-02": true,
+        "FE-05": true
+      },
+      "pass": true
+    },
+    "reproducibility_block_present": true,
     "all_assignment_tasks_complete": true,
     "rubric_advanced_evidence_present": true,
     "github_link_present": true,
@@ -42,9 +63,9 @@
     "notebook_pdf_build": {
       "status": "failed_in_env",
       "strict_gate_pass": false,
-      "reason": "nbconvert+pandoc compatibility issue (pandoc 3.x); notebook PDF command may fail in some environments.",
+      "reason": "nbconvert with pandoc 3.x generated xelatex failure (undefined control sequence \\pandocbounded).",
       "fallback_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
-      "fallback_method": "LaTeX build from Project Workspace/Supporting Materials/Report Sources/main_report.tex"
+      "fallback_method": "pdflatex build from Project Workspace/Supporting Materials/Report Sources/main_report.tex"
     },
     "submission_pdf_present_via_latex_fallback": true
   },

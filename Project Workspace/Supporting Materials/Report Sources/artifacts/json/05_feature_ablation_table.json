@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-02-19T08:05:57.627719",
+  "seed": 42,
+  "virality_threshold": 4189.399999999994,
+  "train_size": 15000,
+  "test_size": 5000,
+  "models": [
+    {
+      "model": "baseline",
+      "feature_count": 6,
+      "roc_auc": 0.9999841797315717,
+      "average_precision": 0.9997095278262266,
+      "f1_at_0_5": 0.876949740034662
+    },
+    {
+      "model": "baseline_plus_sentiment",
+      "feature_count": 7,
+      "roc_auc": 0.9999841797315717,
+      "average_precision": 0.9997095278262266,
+      "f1_at_0_5": 0.876949740034662
+    },
+    {
+      "model": "baseline_plus_sentiment_topics",
+      "feature_count": 12,
+      "roc_auc": 0.9999750206287974,
+      "average_precision": 0.9995457614692709,
+      "f1_at_0_5": 0.8846153846153846
+    }
+  ],
+  "figure": "Project Workspace/Supporting Materials/Report Sources/artifacts/figures/05_feature_ablation_comparison.png"
+}

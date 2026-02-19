@@ -49,10 +49,10 @@ def parse_args() -> argparse.Namespace:
 def clean_text(text: str) -> str:
     if not isinstance(text, str):
         return ""
-    text = re.sub(r"http[s]?://\\S+", "", text)
-    text = re.sub(r"\\[([^\\]]+)\\]\\([^\\)]+\\)", r"\\1", text)
+    text = re.sub(r"http[s]?://\S+", "", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
     text = re.sub(r"[*_]{1,3}", "", text)
-    text = re.sub(r"#{1,6}\\s*", "", text)
+    text = re.sub(r"#{1,6}\s*", "", text)
     text = (
         text.replace("&amp;", "&")
         .replace("&lt;", "<")
@@ -60,7 +60,7 @@ def clean_text(text: str) -> str:
         .replace("&nbsp;", " ")
         .replace("&#x200B;", "")
     )
-    return re.sub(r"\\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def infer_post_type(url: str) -> str:
@@ -83,6 +83,33 @@ def simple_sentiment(text: str) -> float:
     pos = sum(t in POS_WORDS for t in tokens)
     neg = sum(t in NEG_WORDS for t in tokens)
     return (pos - neg) / len(tokens)
+
+
+def prepare_feature_frame(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """Build sentiment and topic features once for downstream stages."""
+    work = df.copy()
+    text_col = "title_nlp" if "title_nlp" in work.columns else "title_clean"
+    work["sentiment_score"] = work[text_col].fillna("").map(simple_sentiment)
+
+    tokenized = work[text_col].fillna("").map(lambda t: re.findall(r"[A-Za-z]{2,}", str(t).lower()))
+    dictionary = corpora.Dictionary(tokenized)
+    dictionary.filter_extremes(no_below=30, no_above=0.5, keep_n=2000)
+    corpus = [dictionary.doc2bow(t) for t in tokenized]
+
+    if len(dictionary) == 0:
+        topic_df = pd.DataFrame(np.zeros((len(work), 5)), columns=[f"topic_{i}" for i in range(5)])
+        topic_top_terms = {f"topic_{i}": [] for i in range(5)}
+    else:
+        lda = LdaModel(corpus=corpus, id2word=dictionary, num_topics=5, passes=3, random_state=42)
+        topic_probs = []
+        for bow in corpus:
+            dist = lda.get_document_topics(bow, minimum_probability=0.0)
+            topic_probs.append([p for _, p in sorted(dist, key=lambda x: x[0])])
+        topic_df = pd.DataFrame(topic_probs, columns=[f"topic_{i}" for i in range(5)])
+        topic_top_terms = {f"topic_{i}": [w for w, _ in lda.show_topic(i, topn=8)] for i in range(5)}
+
+    work = pd.concat([work.reset_index(drop=True), topic_df.reset_index(drop=True)], axis=1)
+    return work, topic_top_terms
 
 
 def preprocess(df_raw: pd.DataFrame) -> pd.DataFrame:
@@ -157,27 +184,9 @@ def run_eda(df: pd.DataFrame, out_dir: Path) -> dict:
     }
 
 
-def run_feature_stage(df: pd.DataFrame, out_dir: Path, sample_size: int) -> dict:
+def run_feature_stage(df: pd.DataFrame, out_dir: Path, sample_size: int, topic_top_terms: dict) -> dict:
     fig_dir = out_dir / "artifacts" / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
-
-    # Sentiment + topics
-    df = df.copy()
-    df["sentiment_score"] = df["title_nlp"].fillna("").map(simple_sentiment)
-
-    tokenized = df["title_nlp"].fillna("").map(lambda t: re.findall(r"[A-Za-z]{2,}", t.lower()))
-    dictionary = corpora.Dictionary(tokenized)
-    dictionary.filter_extremes(no_below=30, no_above=0.5, keep_n=2000)
-    corpus = [dictionary.doc2bow(t) for t in tokenized]
-    lda = LdaModel(corpus=corpus, id2word=dictionary, num_topics=5, passes=3, random_state=42)
-
-    topic_probs = []
-    for bow in corpus:
-        dist = lda.get_document_topics(bow, minimum_probability=0.0)
-        dist = [p for _, p in sorted(dist, key=lambda x: x[0])]
-        topic_probs.append(dist)
-    topic_df = pd.DataFrame(topic_probs, columns=[f"topic_{i}" for i in range(5)])
-    df = pd.concat([df.reset_index(drop=True), topic_df.reset_index(drop=True)], axis=1)
 
     threshold = float(df["score"].quantile(0.95))
     df["viral_flag"] = (df["score"] >= threshold).astype(int)
@@ -211,8 +220,100 @@ def run_feature_stage(df: pd.DataFrame, out_dir: Path, sample_size: int) -> dict
         "average_precision": ap,
         "f1": f1,
         "virality_threshold": threshold,
-        "topic_top_terms": {f"topic_{i}": [w for w, _ in lda.show_topic(i, topn=8)] for i in range(5)},
+        "topic_top_terms": topic_top_terms,
     }
+
+
+def _evaluate_model(X_train: pd.DataFrame, X_test: pd.DataFrame, y_train: pd.Series, y_test: pd.Series) -> dict:
+    model = LogisticRegression(max_iter=1200, class_weight="balanced", solver="liblinear")
+    model.fit(X_train, y_train)
+    pred_prob = model.predict_proba(X_test)[:, 1]
+    pred = (pred_prob >= 0.5).astype(int)
+    return {
+        "roc_auc": float(roc_auc_score(y_test, pred_prob)),
+        "average_precision": float(average_precision_score(y_test, pred_prob)),
+        "f1_at_0_5": float(f1_score(y_test, pred)),
+    }
+
+
+def run_feature_ablation(df: pd.DataFrame, out_dir: Path, sample_size: int) -> dict:
+    fig_dir = out_dir / "artifacts" / "figures"
+    json_dir = out_dir / "artifacts" / "json"
+    fig_dir.mkdir(parents=True, exist_ok=True)
+    json_dir.mkdir(parents=True, exist_ok=True)
+
+    work = df.copy()
+    threshold = float(work["score"].quantile(0.95))
+    work["viral_flag"] = (work["score"] >= threshold).astype(int)
+    sample = work.sample(min(sample_size, len(work)), random_state=42)
+    y = sample["viral_flag"].astype(int)
+
+    train_idx, test_idx = train_test_split(
+        sample.index, test_size=0.25, random_state=42, stratify=y
+    )
+    y_train = y.loc[train_idx]
+    y_test = y.loc[test_idx]
+
+    base_cols = [
+        "score_log",
+        "comms_num_log",
+        "title_length",
+        "hour",
+        "score_log_zscore",
+        "comms_num_log_zscore",
+    ]
+    topic_cols = [c for c in sample.columns if c.startswith("topic_")]
+
+    feature_sets = {
+        "baseline": [c for c in base_cols if c in sample.columns],
+        "baseline_plus_sentiment": [c for c in base_cols + ["sentiment_score"] if c in sample.columns],
+        "baseline_plus_sentiment_topics": [c for c in base_cols + ["sentiment_score"] + topic_cols if c in sample.columns],
+    }
+
+    rows = []
+    for label, cols in feature_sets.items():
+        X = sample[cols].fillna(0.0)
+        metrics = _evaluate_model(X.loc[train_idx], X.loc[test_idx], y_train, y_test)
+        rows.append(
+            {
+                "model": label,
+                "feature_count": int(len(cols)),
+                "roc_auc": metrics["roc_auc"],
+                "average_precision": metrics["average_precision"],
+                "f1_at_0_5": metrics["f1_at_0_5"],
+            }
+        )
+
+    # Plot ablation metrics
+    df_plot = pd.DataFrame(rows)
+    labels = df_plot["model"].tolist()
+    x = np.arange(len(labels))
+    width = 0.25
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(x - width, df_plot["roc_auc"], width=width, label="ROC-AUC")
+    plt.bar(x, df_plot["average_precision"], width=width, label="Avg Precision")
+    plt.bar(x + width, df_plot["f1_at_0_5"], width=width, label="F1@0.5")
+    plt.xticks(x, labels, rotation=12, ha="right")
+    plt.ylim(0.0, 1.05)
+    plt.title("Feature ablation: baseline vs +sentiment vs +topics")
+    plt.ylabel("Metric value")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(fig_dir / "05_feature_ablation_comparison.png", dpi=220)
+    plt.close()
+
+    payload = {
+        "generated_at": datetime.now().isoformat(),
+        "seed": 42,
+        "virality_threshold": threshold,
+        "train_size": int(len(train_idx)),
+        "test_size": int(len(test_idx)),
+        "models": rows,
+        "figure": str(fig_dir / "05_feature_ablation_comparison.png"),
+    }
+    (json_dir / "05_feature_ablation_table.json").write_text(json.dumps(payload, indent=2))
+    return payload
 
 
 def main() -> None:
@@ -228,7 +329,9 @@ def main() -> None:
     cleaned.to_csv(cleaned_out, index=False)
 
     eda_stats = run_eda(cleaned, out_dir)
-    feature_stats = run_feature_stage(cleaned, out_dir, args.sample_size)
+    feature_frame, topic_top_terms = prepare_feature_frame(cleaned)
+    feature_stats = run_feature_stage(feature_frame, out_dir, args.sample_size, topic_top_terms)
+    ablation_stats = run_feature_ablation(feature_frame, out_dir, args.sample_size)
 
     summary = {
         "generated_at": datetime.now().isoformat(),
@@ -236,6 +339,7 @@ def main() -> None:
         "outputs": {"cleaned": str(cleaned_out)},
         "eda": eda_stats,
         "feature_engineering": feature_stats,
+        "feature_ablation": ablation_stats,
     }
     (out_dir / "artifacts" / "json" / "full_workflow_summary.json").write_text(json.dumps(summary, indent=2))
 

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-19T07:45:43.594360",
-  "generated_on_branch": "Main-Final-Deliverable",
+  "generated_at": "2026-02-19T08:16:37.613668",
+  "generated_on_branch": "codex/temporary-execution-branch-report-polish",
   "target_branch": "Main-Final-Deliverable",
-  "target_branch_head_at_generation": "3b591b3cc39343df81c84500393b66026379ec6d",
+  "target_branch_head_at_generation": "6f9f971e8c18e5f09909123aade56f9d7e67ab69",
   "source_scope": "Canonical upstream branches used for final assembly",
   "sources": {
     "origin/Intro-&-Dataset-Description": {

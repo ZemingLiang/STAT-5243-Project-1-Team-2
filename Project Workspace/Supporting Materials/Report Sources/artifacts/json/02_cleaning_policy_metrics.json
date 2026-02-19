@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-02-19T07:59:08.469235",
+  "source_files": {
+    "raw": "/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Datasets/reddit_wsb.csv",
+    "cleaned": "/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Datasets/reddit_wsb_cleaned.csv"
+  },
+  "metrics": {
+    "raw_row_count": 53187,
+    "cleaned_row_count": 53187,
+    "invalid_timestamp_count_in_raw": 0,
+    "invalid_timestamp_pct_in_raw": 0.0,
+    "raw_duplicate_id_count": 0,
+    "raw_duplicate_full_row_count": 0,
+    "cleaned_duplicate_id_count": 0,
+    "cleaned_duplicate_full_row_count": 0
+  }
+}

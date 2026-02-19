@@ -1,5 +1,60 @@
 \section{Exploratory Data Analysis (EDA)}
 
-EDA quantified engagement distribution shape, post-type composition, and temporal dynamics. The analysis includes summary statistics, distributional visualizations, relationship plots, and trend diagnostics across time slices.
+EDA was structured to move beyond descriptive plotting and quantify engagement dynamics using both visual and inferential diagnostics. Core views covered distributions, pairwise relationships, post-type differences, and temporal behavior across the 2020--2021 window.
 
-Advanced diagnostics include correlation analysis, non-parametric group comparisons, and anomaly-rate summaries to strengthen interpretation beyond descriptive plotting.
+\subsection{Distribution and Tail Behavior}
+Raw engagement (\texttt{score}, \texttt{comms\_num}) shows strong right-skew with a clear viral tail, motivating log-space inspection for stable interpretation. The transformed variables (\texttt{score\_log}, \texttt{comms\_num\_log}) are substantially more analyzable and preserve rank-order differences while reducing dominance of extreme posts.
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_01_score_distribution.png|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_03_score_log_distribution.png|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_fig_01_score_distribution.json|
+\end{itemize}
+
+\subsection{Association Strength (Votes vs Comments)}
+The strongest quantitative EDA signal is the monotonic relationship between voting and comment activity. Spearman analysis shows:
+\begin{itemize}
+  \item \(\rho = 0.785220719966194\)
+  \item \(p\)-value \(= 0.0\) (machine precision floor; effectively \(p \ll 0.001\))
+\end{itemize}
+Interpretation: higher-visibility posts tend to generate both approval and discussion simultaneously, consistent with clustered attention behavior in WSB threads (Evidence claim \texttt{EDA-01}).
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_10_score_comments_scatter.png|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json|
+  \item \verb|Project Workspace/qa/evidence_registry_report_depth.json| (\texttt{EDA-01})
+\end{itemize}
+
+\subsection{Post-Type Effect Significance}
+Non-parametric group comparison across post types indicates statistically significant differences in engagement intensity:
+\begin{itemize}
+  \item Kruskal-Wallis statistic \(= 5855.6579978108875\)
+  \item \(p\)-value \(= 0.0\) (machine precision floor)
+\end{itemize}
+Interpretation: content format is not neutral; post-type composition contributes systematically to engagement variation (Evidence claim \texttt{EDA-02}).
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_19_post_type_median_iqr.png|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json|
+  \item \verb|Project Workspace/qa/evidence_registry_report_depth.json| (\texttt{EDA-02})
+\end{itemize}
+
+\subsection{Anomaly-Rate Diagnostics}
+Outlier-rate diagnostics quantify the viral-tail prevalence in standardized engagement:
+\begin{itemize}
+  \item \texttt{score\_log\_outlier\_rate\_abs\_ge\_3} \(= 0.0017297459905616034\) (\(\approx 0.173\%\))
+\end{itemize}
+Interpretation: extreme events are rare in count but high in influence, so robust summaries and log-space analysis are necessary to avoid misleading central tendencies (Evidence claim \texttt{EDA-03}).
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/03_eda_fig_17_daily_outlier_count.png|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json|
+  \item \verb|Project Workspace/qa/evidence_registry_report_depth.json| (\texttt{EDA-03})
+\end{itemize}
+
+\subsection{Statistical Caveats}
+These EDA diagnostics are observational and identify association, not causality. Extremely large sample size can yield very small \(p\)-values for modest effect differences; therefore, practical significance was interpreted jointly with effect-size-like indicators (e.g., \(\rho\), distribution shifts, outlier rates) and figure-level context rather than significance testing alone.
