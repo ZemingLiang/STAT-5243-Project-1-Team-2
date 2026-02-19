@@ -1,6 +1,15 @@
+READ REPORT PDF FIRST: `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+
 # STAT-5243-Project-1-Team-2
 
 This branch is reorganized into two top-level folders for clarity.
+
+## Submission Quick Links
+- Final PDF report: `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+- Submission notebook: `Project Deliverables/Report/Project1_Final_Submission.ipynb`
+- Canonical full workflow code: `Project Deliverables/Code Files/full_workflow.py`
+- Raw dataset: `Project Deliverables/Datasets/reddit_wsb.csv`
+- Cleaned dataset: `Project Deliverables/Datasets/reddit_wsb_cleaned.csv`
 
 ## 1) Project Deliverables
 - `Project Deliverables/Datasets/`
