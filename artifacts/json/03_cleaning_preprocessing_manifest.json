@@ -1,0 +1,24 @@
+{
+  "section_id": "03_cleaning_preprocessing",
+  "branch": "Cleaning-and-Preprocessing",
+  "generated_at": "2026-02-19T06:59:52.074876",
+  "artifacts": [
+    "code/cleaning_workflow.py",
+    "report/sections/03_cleaning_preprocessing.tex",
+    "artifacts/json/03_cleaning_preprocessing_summary.json",
+    "artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png",
+    "artifacts/figures/02_cleaning_fig_02_score_by_body_presence.png",
+    "artifacts/figures/02_cleaning_fig_03_outlier_visualization.png",
+    "artifacts/figures/02_cleaning_fig_04_influence_plot.png",
+    "artifacts/figures/02_cleaning_fig_05_qq_normality.png",
+    "artifacts/figures/02_cleaning_fig_06_spearman_heatmap.png",
+    "artifacts/figures/02_cleaning_fig_07_scaling_comparison.png",
+    "artifacts/json/02_cleaning_fig_01_missingness_diagnostics.json",
+    "artifacts/json/02_cleaning_fig_02_score_by_body_presence.json",
+    "artifacts/json/02_cleaning_fig_03_outlier_visualization.json",
+    "artifacts/json/02_cleaning_fig_04_influence_plot.json",
+    "artifacts/json/02_cleaning_fig_05_qq_normality.json",
+    "artifacts/json/02_cleaning_fig_06_spearman_heatmap.json",
+    "artifacts/json/02_cleaning_fig_07_scaling_comparison.json"
+  ]
+}

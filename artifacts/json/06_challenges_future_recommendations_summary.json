@@ -1,0 +1,21 @@
+{
+  "section_id": "06_challenges_future_recommendations",
+  "branch": "Challenges-Faced-&-Future-Recommendations",
+  "inputs": [
+    "Challenges Faced and Future Recommendations"
+  ],
+  "methods": [
+    "Narrative consolidation",
+    "LaTeX structuring"
+  ],
+  "findings": [
+    "Current analysis is constrained by post-level proxy signals and heavy-tailed engagement.",
+    "Key future directions include advanced NLP and market-data integration."
+  ],
+  "limitations": [
+    "Section is strategic and does not itself add new empirical results."
+  ],
+  "outputs": [
+    "report/sections/06_challenges_future_recommendations.tex"
+  ]
+}

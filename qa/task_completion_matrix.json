@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-02-19T06:51:26.701363",
+  "session": "01",
+  "scope": "Assignment task completion audit before improvements",
+  "tasks": [
+    {
+      "task_id": "1_data_acquisition",
+      "title": "Data Acquisition",
+      "status": "complete",
+      "items": [
+        {
+          "requirement": "Obtain dataset from public repository / API / scraping / open-access source",
+          "status": "complete",
+          "evidence": [
+            "origin/Intro-&-Dataset-Description:Introduction and Data Acquisition",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb.csv",
+            "origin/Cleaning-and-Preprocessing:README.md"
+          ],
+          "notes": "Dataset acquired from Kaggle (public data repository); API/scraping integration not used in current baseline."
+        },
+        {
+          "requirement": "Using multiple sources/files is highly encouraged",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:reddit_wsb.csv",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+          ],
+          "notes": "Final branch includes multiple files and multi-branch artifacts integrated into one submission package."
+        }
+      ]
+    },
+    {
+      "task_id": "2_cleaning_inconsistencies",
+      "title": "Data Cleaning and Handling Inconsistencies",
+      "status": "complete",
+      "items": [
+        {
+          "requirement": "Detect/rectify inconsistencies (types/labels)",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb"
+          ],
+          "notes": "Timestamp type reconciliation and categorical handling present."
+        },
+        {
+          "requirement": "Ensure uniform formatting",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb"
+          ],
+          "notes": "Text normalization and formatting cleanup implemented."
+        },
+        {
+          "requirement": "Address duplicate entries",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb"
+          ],
+          "notes": "Exact duplicates and near-duplicate checks included."
+        },
+        {
+          "requirement": "Identify/handle outliers",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+            "origin/Cleaning-and-Preprocessing:Data Cleaning and Preprocessing Summary"
+          ],
+          "notes": "IQR/Z-score/Cook's distance diagnostics and log-transform strategy documented."
+        },
+        {
+          "requirement": "Identify/handle missing values",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+          ],
+          "notes": "Structural missingness treatment and indicator features included."
+        }
+      ]
+    },
+    {
+      "task_id": "3_eda",
+      "title": "Exploratory Data Analysis (EDA)",
+      "status": "complete",
+      "items": [
+        {
+          "requirement": "Generate summary statistics and descriptive insights",
+          "status": "complete",
+          "evidence": [
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+            "origin/Summary-of-Findings:Summary of Key Findings"
+          ],
+          "notes": "Descriptive outputs and interpretations provided."
+        },
+        {
+          "requirement": "Visualize distributions, relationships, and trends",
+          "status": "complete",
+          "evidence": [
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+            "origin/Exploratory-Data-Analysis-(EDA):eda_figures.zip"
+          ],
+          "notes": "Multiple hist/scatter/bar/trend/correlation visualizations present."
+        },
+        {
+          "requirement": "Identify patterns, correlations, anomalies",
+          "status": "complete",
+          "evidence": [
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb"
+          ],
+          "notes": "Correlation and group pattern exploration present."
+        },
+        {
+          "requirement": "Provide initial interpretations",
+          "status": "complete",
+          "evidence": [
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+            "origin/Summary-of-Findings:Summary of Key Findings"
+          ],
+          "notes": "Interpretation markdown and summary text present."
+        }
+      ]
+    },
+    {
+      "task_id": "4_preprocessing_feature_engineering",
+      "title": "Data Preprocessing and Feature Engineering",
+      "status": "complete",
+      "items": [
+        {
+          "requirement": "Normalize/standardize numerical variables",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+          ],
+          "notes": "Z-score and min-max scaled features present."
+        },
+        {
+          "requirement": "Encode categorical variables",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+          ],
+          "notes": "Encoded categorical indicators exist."
+        },
+        {
+          "requirement": "Create meaningful new features",
+          "status": "complete",
+          "evidence": [
+            "origin/Feature-Engineering-&-Justification:Feature-Engineering-&-Justification.ipynb",
+            "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+          ],
+          "notes": "Temporal, text, interaction, and viral-model-oriented features present."
+        },
+        {
+          "requirement": "Justify preprocessing steps",
+          "status": "complete",
+          "evidence": [
+            "origin/Cleaning-and-Preprocessing:Data Cleaning and Preprocessing Summary",
+            "origin/Feature-Engineering-&-Justification:Feature Engineering"
+          ],
+          "notes": "Methods and rationale narratives included."
+        }
+      ]
+    },
+    {
+      "task_id": "5_report_preparation",
+      "title": "Report Preparation",
+      "status": "complete",
+      "items": [
+        {
+          "requirement": "Document all steps in acquisition/cleaning/EDA/preprocessing/feature engineering",
+          "status": "complete",
+          "evidence": [
+            "origin/Intro-&-Dataset-Description:Introduction and Data Acquisition",
+            "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+            "origin/Feature-Engineering-&-Justification:Feature Engineering"
+          ],
+          "notes": "Documentation exists but is split across branches/files."
+        },
+        {
+          "requirement": "Present insights with structured visualizations and explanations",
+          "status": "complete",
+          "evidence": [
+            "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+            "origin/Summary-of-Findings:Summary of Key Findings"
+          ],
+          "notes": "Visuals and written interpretations present."
+        },
+        {
+          "requirement": "Single structured submission-ready report package",
+          "status": "complete",
+          "evidence": [
+            "report/main_report.tex",
+            "report/Project1_Final_Submission.ipynb",
+            "submission/STAT5243_Project1_Team2_Final.pdf"
+          ],
+          "notes": "Integrated final report package assembled in Main-Final-Deliverable."
+        }
+      ]
+    }
+  ],
+  "updated_at": "2026-02-19T07:15:02.475589"
+}

@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_09",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Top categories for day_of_week",
+  "caption": "Top categories for day_of_week",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.268502"
+}

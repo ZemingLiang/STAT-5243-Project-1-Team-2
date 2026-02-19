@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-02-19T06:52:09.633316",
+  "session": "02",
+  "target": "Advanced (A+) across all categories",
+  "categories": [
+    {
+      "name": "Data Selection",
+      "max_points": 8,
+      "current_estimate": 6,
+      "target_points": 8,
+      "evidence": [
+        "origin/Intro-&-Dataset-Description:Introduction and Data Acquisition",
+        "origin/Cleaning-and-Preprocessing:reddit_wsb.csv",
+        "origin/Cleaning-and-Preprocessing:Project1.ipynb"
+      ],
+      "gaps": [
+        "Need stronger explicit argument for dataset complexity with quantified data quality burden.",
+        "Need clearer rationale for handling unstructured text, skewness, and structural missingness as advanced complexity."
+      ],
+      "actions": {
+        "P0": [
+          "Add formal complexity subsection with metrics (missingness %, skewness/kurtosis, multimodal content types, duplicate checks).",
+          "Add branch-level JSON evidence for complexity diagnostics to cite in final report."
+        ],
+        "P1": [
+          "Include optional external context table about meme-stock period significance and data limitations."
+        ]
+      },
+      "outputs": [
+        "report/sections/01_intro_data_description.tex",
+        "artifacts/json/01_intro_data_description_summary.json"
+      ]
+    },
+    {
+      "name": "Data Exploration",
+      "max_points": 8,
+      "current_estimate": 6,
+      "target_points": 8,
+      "evidence": [
+        "origin/Exploratory-Data-Analysis-(EDA):Exploratory Data Analysis EDA.ipynb",
+        "origin/Summary-of-Findings:Summary of Key Findings"
+      ],
+      "gaps": [
+        "EDA notebook currently has hardcoded path and weak portability.",
+        "No standardized per-figure metadata/output artifacts for reproducibility.",
+        "Need deeper statistical interpretation to demonstrate advanced nuance."
+      ],
+      "actions": {
+        "P0": [
+          "Refactor EDA input paths to repo-relative.",
+          "Export all EDA charts as PNG + per-figure JSON.",
+          "Add advanced diagnostics (correlation/robust group comparisons/anomaly summaries)."
+        ],
+        "P1": [
+          "Add compact appendix table mapping each figure to insight and implication."
+        ]
+      },
+      "outputs": [
+        "artifacts/figures/03_eda_*.png",
+        "artifacts/json/03_eda_fig_*.json",
+        "artifacts/json/03_eda_summary.json"
+      ]
+    },
+    {
+      "name": "Data Pre-processing",
+      "max_points": 8,
+      "current_estimate": 7,
+      "target_points": 8,
+      "evidence": [
+        "origin/Cleaning-and-Preprocessing:Project1.ipynb",
+        "origin/Cleaning-and-Preprocessing:Data Cleaning and Preprocessing Summary",
+        "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+      ],
+      "gaps": [
+        "Need explicit reproducibility artifacts (script + JSON outputs) beyond notebook narrative.",
+        "Need per-figure audit trail for each preprocessing diagnostic plot."
+      ],
+      "actions": {
+        "P0": [
+          "Create `code/cleaning_workflow.py` with deterministic pipeline sections.",
+          "Export all cleaning figures to PNG and matching JSON metadata.",
+          "Add README execution instructions for this branch workflow."
+        ],
+        "P1": [
+          "Add lightweight data quality assertion checks serialized to JSON."
+        ]
+      },
+      "outputs": [
+        "code/cleaning_workflow.py",
+        "artifacts/figures/02_cleaning_*.png",
+        "artifacts/json/02_cleaning_fig_*.json"
+      ]
+    },
+    {
+      "name": "Feature Engineering",
+      "max_points": 8,
+      "current_estimate": 6,
+      "target_points": 8,
+      "evidence": [
+        "origin/Feature-Engineering-&-Justification:Feature Engineering",
+        "origin/Feature-Engineering-&-Justification:Feature-Engineering-&-Justification.ipynb"
+      ],
+      "gaps": [
+        "Current branch lacks exported visual diagnostics and JSON artifact trail.",
+        "Need stronger breadth (sentiment/topic features) for advanced creativity claim.",
+        "Need clearer model validation outputs in reproducible form."
+      ],
+      "actions": {
+        "P0": [
+          "Add sentiment and topic modeling feature generation outputs.",
+          "Create model diagnostic plots (ROC/PR/confusion/calibration/importance) as PNG.",
+          "Emit per-figure JSON + section summary JSON."
+        ],
+        "P1": [
+          "Add ablation-style performance comparison table serialized to JSON."
+        ]
+      },
+      "outputs": [
+        "artifacts/figures/04_feature_*.png",
+        "artifacts/json/04_feature_fig_*.json",
+        "artifacts/json/04_feature_summary.json"
+      ]
+    },
+    {
+      "name": "Written Report",
+      "max_points": 15,
+      "current_estimate": 9,
+      "target_points": 15,
+      "evidence": [
+        "origin/Intro-&-Dataset-Description:Introduction and Data Acquisition",
+        "origin/Summary-of-Findings:Summary of Key Findings",
+        "origin/Challenges-Faced-&-Future-Recommendations:Challenges Faced and Future Recommendations"
+      ],
+      "gaps": [
+        "Narrative content is fragmented across branches and inconsistent in formatting/voice.",
+        "No single integrated report in assignment-specified order currently exists on final branch.",
+        "No consolidated member-contribution + GitHub link section in final compiled report."
+      ],
+      "actions": {
+        "P0": [
+          "Convert narrative text to LaTeX sections with consistent structure and improved clarity.",
+          "Assemble final report in exact assignment order in `report/main_report.tex` and notebook PDF source.",
+          "Add explicit GitHub link and locked team contribution section."
+        ],
+        "P1": [
+          "Add rubric coverage appendix mapping claims to evidence artifacts."
+        ]
+      },
+      "outputs": [
+        "report/main_report.tex",
+        "report/Project1_Final_Submission.ipynb",
+        "submission/STAT5243_Project1_Team2_Final.pdf"
+      ]
+    }
+  ],
+  "backlog_priority": {
+    "P0": [
+      "Narrative-to-LaTeX conversion across text branches with JSON summaries",
+      "Cleaning/EDA/Feature figure export + per-figure JSON",
+      "EDA portability fixes and advanced diagnostics",
+      "Feature enhancements (sentiment/topic/model diagnostics)",
+      "Unified workflow code + requirements + run script",
+      "Final integrated report + PDF + checklist"
+    ],
+    "P1": [
+      "Richer appendix evidence tables and ablation comparisons",
+      "Additional contextual narrative polish"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_08",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Top categories for post_type",
+  "caption": "Top categories for post_type",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.268123"
+}

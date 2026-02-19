@@ -1,0 +1,19 @@
+Challenges-Faced & Future Recommendations
+
+6.1 Challenges-Faced
+Several challenges were encountered during this project.
+
+First, the dataset consists primarily of Reddit posts and engagement metrics, which capture user interactions but do not directly reflect actual investment decisions or financial outcomes. Thus, while the analysis reveals patterns of investor attention and discussion, it cannot conclusively determine whether these discussions translate into real trading behavior or market impact.
+Secondly, the dataset contains a large amount of unstructured textual content, including post titles and body texts. While basic cleaning and preprocessing was performed, deeper natural language processing techniques such as sentiment analysis or topic modeling are not fully implemented. This limits our ability to precisely identify specific investment themes or sentiments that drive retail investor interest.
+Third, engagement metrics such as score and comment count are heavily skewes, with a small number of viral posts taking a large share of the activity. This heavy-tailed distribution makes statistical summaries sensitive to extreme values and can mask more subtle patterns in typical posts.
+
+Finally, the analysis focuses on a specific time period (2020-2021), which coincides with the unusual meme-stock phenomenon. Therefore, the findings may not generalize to other periods or to retail investment behavior more generally, outside of this unique market environment.
+
+6.2 Future Directions
+Future work could extend this analysis in several ways.
+
+First, applying advanced natural language processing methods-such as topic modeling, named entity recognition, or sentiment analysis-would allow more precise identification of which stock, sector, or investment narratives dominate community discussions. This will provide deeper insight into the actual investment direction of the retail traders.
+Second, integrating external financial market data such as stock price, trading volume, or volatility metrics helps to assess whether spikes in Reddit discussions correspond to measurable market volatility. This would allow the investigation of the relationship between online attention and real financial outcomes.
+Third, temporal models can be used to analyze how investor attention changes over time, for example by tracking the trend of discussion before, during, and after major market events. This will improve the understanding of how online communities react to market news and how attention spreads.
+
+Finally, future research could compare WallStreetBets with other online investment communities or extend the dataset to other years, thereby assessing whether the observed patterns of participation are specific to the meme-stock era or represent broader characteristics of retail investor behavior.

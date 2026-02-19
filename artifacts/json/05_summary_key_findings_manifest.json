@@ -1,0 +1,10 @@
+{
+  "section_id": "05_summary_key_findings",
+  "branch": "Summary-of-Findings",
+  "source_commit": "678f2dcc532372e1f9d4a5b516a86753618c3bab",
+  "generated_at": "2026-02-19T06:55:39.785813",
+  "artifacts": [
+    "report/sections/05_summary_key_findings.tex",
+    "artifacts/json/05_summary_key_findings_summary.json"
+  ]
+}
