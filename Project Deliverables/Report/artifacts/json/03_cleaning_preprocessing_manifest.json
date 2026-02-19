@@ -1,0 +1,24 @@
+{
+  "section_id": "03_cleaning_preprocessing",
+  "branch": "Cleaning-and-Preprocessing",
+  "generated_at": "2026-02-19T06:59:52.074876",
+  "artifacts": [
+    "Project Deliverables/Code Files/cleaning_workflow.py",
+    "Project Deliverables/Report/sections/03_cleaning_preprocessing.tex",
+    "Project Deliverables/Report/artifacts/json/03_cleaning_preprocessing_summary.json",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_02_score_by_body_presence.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_03_outlier_visualization.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_04_influence_plot.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_05_qq_normality.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_06_spearman_heatmap.png",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_07_scaling_comparison.png",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_01_missingness_diagnostics.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_02_score_by_body_presence.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_03_outlier_visualization.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_04_influence_plot.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_05_qq_normality.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_06_spearman_heatmap.json",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_07_scaling_comparison.json"
+  ]
+}

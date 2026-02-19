@@ -1,0 +1,27 @@
+{
+  "section_id": "05_feature_engineering",
+  "branch": "Feature-Engineering-&-Justification",
+  "generated_at": "2026-02-19T07:10:00.883337",
+  "artifacts": [
+    "Project Deliverables/Code Files/feature_enhancement_workflow.py",
+    "Project Deliverables/Report/sections/05_feature_engineering.tex",
+    "Project Deliverables/Report/artifacts/json/05_feature_engineering_summary.json",
+    "Project Deliverables/Report/artifacts/json/05_feature_engineering_manifest.json",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_01_sentiment_distribution.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_02_topic_entropy_distribution.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_03_dominant_topic_distribution.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_04_roc_curve.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_05_pr_curve.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_06_confusion_matrix.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_07_pred_prob_distribution.png",
+    "Project Deliverables/Report/artifacts/figures/04_feature_fig_08_top_coefficients.png",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_01_sentiment_distribution.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_02_topic_entropy_distribution.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_03_dominant_topic_distribution.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_04_roc_curve.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_05_pr_curve.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_06_confusion_matrix.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_07_pred_prob_distribution.json",
+    "Project Deliverables/Report/artifacts/json/04_feature_fig_08_top_coefficients.json"
+  ]
+}

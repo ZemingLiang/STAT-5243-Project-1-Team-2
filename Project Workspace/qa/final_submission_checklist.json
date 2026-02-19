@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-02-19T07:32:15.643808",
+  "gate_policy": {
+    "strict_overall_pass_requires_all_checks_true": true,
+    "note": "Notebook PDF build remains environment-dependent; LaTeX fallback PDF is included for submission packaging."
+  },
+  "checks": {
+    "required_paths_exist": {
+      "Project Deliverables/Datasets/reddit_wsb.csv": true,
+      "Project Deliverables/Datasets/reddit_wsb_cleaned.csv": true,
+      "Project Deliverables/Code Files/full_workflow.py": true,
+      "Project Deliverables/Code Files/requirements.txt": true,
+      "Project Deliverables/Code Files/run_full_workflow.sh": true,
+      "Project Deliverables/Report/main_report.tex": true,
+      "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
+      "Project Deliverables/Report/submission/STAT5243_Project1_Team2_Final.pdf": true,
+      "Project Deliverables/Report/artifacts/json/branch_source_manifest.json": true
+    },
+    "all_required_paths_exist": true,
+    "section_order_exact": true,
+    "figure_json_parity": {
+      "02_cleaning": {
+        "png_count": 7,
+        "json_count": 7,
+        "pass": true
+      },
+      "03_eda": {
+        "png_count": 19,
+        "json_count": 19,
+        "pass": true
+      },
+      "04_feature": {
+        "png_count": 8,
+        "json_count": 8,
+        "pass": true
+      }
+    },
+    "all_parity_pass": true,
+    "all_assignment_tasks_complete": true,
+    "rubric_advanced_evidence_present": true,
+    "github_link_present": true,
+    "all_member_contributions_present": true,
+    "notebook_pdf_build": {
+      "status": "failed_in_env",
+      "strict_gate_pass": false,
+      "reason": "nbconvert+pandoc compatibility issue (pandoc 3.x); notebook PDF command may fail in some environments.",
+      "fallback_pdf": "Project Deliverables/Report/submission/STAT5243_Project1_Team2_Final.pdf",
+      "fallback_method": "LaTeX build from Project Deliverables/Report/main_report.tex"
+    },
+    "submission_pdf_present_via_latex_fallback": true
+  },
+  "overall_pass": false,
+  "delivery_pass_with_fallback": true
+}

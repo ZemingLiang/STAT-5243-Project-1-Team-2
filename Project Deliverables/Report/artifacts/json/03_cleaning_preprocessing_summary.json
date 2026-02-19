@@ -1,0 +1,30 @@
+{
+  "section_id": "03_cleaning_preprocessing",
+  "branch": "Cleaning-and-Preprocessing",
+  "inputs": [
+    "reddit_wsb.csv",
+    "Cleaning-and-Preprocessing.ipynb"
+  ],
+  "methods": [
+    "Data-type reconciliation",
+    "Duplicate and near-duplicate analysis",
+    "Text normalization",
+    "Missingness handling",
+    "Outlier diagnostics and log transform",
+    "Scaling and encoding"
+  ],
+  "findings": [
+    "Structural missingness in body text is substantial and explicitly modeled.",
+    "Log-transformed engagement metrics are more stable for analysis.",
+    "Scaled and encoded features support downstream modeling workflows."
+  ],
+  "limitations": [
+    "Script-form pipeline may not exactly reproduce all notebook exploratory branches."
+  ],
+  "outputs": [
+    "Project Deliverables/Code Files/cleaning_workflow.py",
+    "Project Deliverables/Report/sections/03_cleaning_preprocessing.tex",
+    "Project Deliverables/Report/artifacts/figures/02_cleaning_fig_*.png",
+    "Project Deliverables/Report/artifacts/json/02_cleaning_fig_*.json"
+  ]
+}

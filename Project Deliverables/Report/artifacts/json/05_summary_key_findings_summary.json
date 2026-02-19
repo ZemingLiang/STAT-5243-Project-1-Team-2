@@ -1,0 +1,21 @@
+{
+  "section_id": "05_summary_key_findings",
+  "branch": "Summary-of-Findings",
+  "inputs": [
+    "Summary of Key Findings"
+  ],
+  "methods": [
+    "Narrative synthesis from EDA and preprocessing outputs"
+  ],
+  "findings": [
+    "Engagement is highly skewed with a strong viral tail.",
+    "Log transformations improve interpretability for comparative analysis.",
+    "Temporal and post-type effects materially influence engagement behavior."
+  ],
+  "limitations": [
+    "Findings are derived from post-level engagement proxies, not direct financial transactions."
+  ],
+  "outputs": [
+    "Project Deliverables/Report/sections/05_summary_key_findings.tex"
+  ]
+}

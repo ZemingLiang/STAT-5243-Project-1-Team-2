@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_18",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Project Deliverables/Code Files/eda_workflow.py",
+  "title": "Hour-day heatmap",
+  "caption": "Mean score_log by day-of-week and hour.",
+  "input_data": [
+    "origin/Cleaning-and-Preprocessing:reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:03:08.079791"
+}

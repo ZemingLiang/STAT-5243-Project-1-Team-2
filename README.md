@@ -1,38 +1,42 @@
 # STAT-5243-Project-1-Team-2
 
-Final integrated deliverables for Project 1 are stored in this branch.
+This branch is reorganized into two top-level folders for clarity.
 
-## Included Deliverables
-- `reddit_wsb.csv` (raw dataset)
-- `reddit_wsb_cleaned.csv` (cleaned/processed dataset)
-- `code/full_workflow.py` (full end-to-end code workflow)
-- `code/requirements.txt` (dependencies)
-- `report/main_report.tex` (combined LaTeX report source)
-- `report/Project1_Final_Submission.ipynb` (submission notebook source)
-- `artifacts/figures/*.png` (individual figure exports)
-- `artifacts/json/*.json` (per-figure and section-level metadata)
-- `submission/STAT5243_Project1_Team2_Final.pdf` (final submission PDF)
+## 1) Project Deliverables
+- `Project Deliverables/Datasets/`
+  - `reddit_wsb.csv` (raw dataset)
+  - `reddit_wsb_cleaned.csv` (cleaned dataset)
+- `Project Deliverables/Code Files/`
+  - Full workflow scripts and dependencies
+  - See `Project Deliverables/Code Files/README.md` for run steps
+- `Project Deliverables/Report/`
+  - `main_report.tex`
+  - `Project1_Final_Submission.ipynb`
+  - `artifacts/` (PNG + JSON outputs)
+  - `sections/` and report sources
+  - `submission/STAT5243_Project1_Team2_Final.pdf`
 
-## Run Instructions
+## 2) Project Workspace
+- `Project Workspace/Source Files/` (working notebooks and narrative source text files)
+- `Project Workspace/qa/` (QA matrices/checklists/diff audits)
+- `Project Workspace/session_logs/` (session-by-session execution logs)
+
+## Quick Run
 ```bash
-python3 -m pip install -r code/requirements.txt
-bash code/run_full_workflow.sh
+python3 -m pip install -r "Project Deliverables/Code Files/requirements.txt"
+bash "Project Deliverables/Code Files/run_full_workflow.sh"
 ```
 
-## Build PDF (recommended)
-Use the LaTeX report source for the most stable build path:
+## Build Report PDF (LaTeX, recommended)
 ```bash
-cd submission
-pdflatex -interaction=nonstopmode ../report/main_report.tex
-pdflatex -interaction=nonstopmode ../report/main_report.tex
-mv main_report.pdf STAT5243_Project1_Team2_Final.pdf
+cd "Project Deliverables/Report"
+pdflatex -interaction=nonstopmode main_report.tex
+pdflatex -interaction=nonstopmode main_report.tex
+mv main_report.pdf submission/STAT5243_Project1_Team2_Final.pdf
 ```
 
-## Build PDF from notebook (optional)
-`nbconvert --to pdf` can fail in environments with incompatible `pandoc/nbconvert` versions.
+## Build Report PDF (Notebook, optional)
 ```bash
-jupyter nbconvert --to pdf report/Project1_Final_Submission.ipynb --output ../submission/STAT5243_Project1_Team2_Final.pdf
+cd "Project Deliverables/Report"
+jupyter nbconvert --to pdf Project1_Final_Submission.ipynb --output submission/STAT5243_Project1_Team2_Final.pdf
 ```
-
-If notebook conversion fails, use the included fallback PDF:
-`submission/STAT5243_Project1_Team2_Final.pdf`.

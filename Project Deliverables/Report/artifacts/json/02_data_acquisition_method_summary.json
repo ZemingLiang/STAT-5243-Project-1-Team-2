@@ -1,0 +1,22 @@
+{
+  "section_id": "02_data_acquisition_method",
+  "branch": "Data-Acquisition-Method",
+  "inputs": [
+    "README.md",
+    "Kaggle CSV source provenance"
+  ],
+  "methods": [
+    "Public repository ingestion",
+    "Schema validation planning"
+  ],
+  "findings": [
+    "Primary source is Kaggle-hosted WSB data originally collected via PRAW.",
+    "Acquisition scope covers meme-stock period and supports full pipeline workflow."
+  ],
+  "limitations": [
+    "Data does not include direct trade execution outcomes."
+  ],
+  "outputs": [
+    "Project Deliverables/Report/sections/02_data_acquisition_method.tex"
+  ]
+}

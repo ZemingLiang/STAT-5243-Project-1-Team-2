@@ -1,0 +1,19 @@
+{
+  "figure_id": "02_cleaning_fig_04",
+  "branch": "Cleaning-and-Preprocessing",
+  "source_file": "Cleaning-and-Preprocessing.ipynb",
+  "title": "Influence diagnostics",
+  "caption": "Residual vs leverage influence visualization.",
+  "input_data": [
+    "reddit_wsb.csv",
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {
+    "rows": 53187,
+    "columns": 30,
+    "missing_body_pct": 53.490514599432196,
+    "score_log_mean": 3.644016811613401,
+    "comms_num_log_mean": 2.8767009786531954
+  },
+  "created_at": "2026-02-19T06:59:52.073221"
+}

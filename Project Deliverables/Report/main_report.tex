@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\title{STAT 5243 Project 1: WallStreetBets Data Pipeline and Exploratory Analytics}
+\author{Zeming Liang, Zuer Weng, Duoli Chen, Isaac Beers}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+% Required order from assignment
+\input{sections/01_intro_data_description.tex}
+\input{sections/02_data_acquisition_method.tex}
+\input{sections/03_cleaning_preprocessing.tex}
+\input{sections/04_eda.tex}
+\input{sections/05_feature_engineering.tex}
+\input{sections/05_summary_key_findings.tex}
+\input{sections/06_challenges_future_recommendations.tex}
+
+\section{GitHub Repository Link}
+Public repository: \url{https://github.com/ZemingLiang/STAT-5243-Project-1-Team-2}
+
+\input{sections/07_team_contributions.tex}
+
+\section{Representative Figures}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{artifacts/figures/02_cleaning_fig_06_spearman_heatmap.png}
+\caption{Cleaning/preprocessing diagnostic: Spearman correlation heatmap.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{artifacts/figures/03_eda_fig_10_score_comments_scatter.png}
+\caption{EDA relationship: \texttt{score\_log} versus \texttt{comms\_num\_log}.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{artifacts/figures/04_feature_fig_04_roc_curve.png}
+\caption{Feature engineering diagnostic: ROC curve for viral classification.}
+\end{figure}
+
+\section{Deliverables Included in This Branch}
+\begin{itemize}
+  \item Raw and cleaned datasets: \texttt{reddit\_wsb.csv}, \texttt{reddit\_wsb\_cleaned.csv}
+  \item Full workflow code files under \texttt{Project Deliverables/Code Files/}
+  \item Section report sources under \texttt{sections/}
+  \item Per-figure PNG artifacts under \texttt{artifacts/figures/}
+  \item Per-figure and per-section JSON artifacts under \texttt{artifacts/json/}
+\end{itemize}
+
+\end{document}
