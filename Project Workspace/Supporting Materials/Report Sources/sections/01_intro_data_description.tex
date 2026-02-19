@@ -6,14 +6,21 @@ The rise of online social platforms has reshaped modern financial markets by exp
 Our objective is to transform raw social-media data into a reliable analytical dataset and derive interpretable insights about investor discussion patterns. The analysis is designed as a complete data-science workflow, from acquisition through preprocessing, EDA, feature engineering, and report synthesis.
 
 \subsection{Dataset Description}
-The dataset contains 53,187 WSB posts, where each row corresponds to one Reddit submission. Core variables include \texttt{title}, \texttt{score}, \texttt{id}, \texttt{url}, \texttt{comms\_num}, \texttt{created}, \texttt{body}, and \texttt{timestamp}. The dataset combines numerical engagement metrics, unstructured text, and temporal metadata.
+The dataset contains 53,187 WSB posts, where each row corresponds to one Reddit submission. Core variables include \texttt{title}, \texttt{score}, \texttt{id}, \texttt{url}, \texttt{comms\_num}, \texttt{created}, \texttt{body}, and \texttt{timestamp}. After preprocessing, the analytical table contains 30 columns while preserving the full row count.
 
-The raw data has notable real-world complexity:
+The raw data has notable real-world complexity and quality burden:
 \begin{itemize}
   \item Unstructured text with markdown, URLs, and internet slang.
-  \item High missingness in \texttt{body}, largely structural by post type.
-  \item Heavy-tailed engagement metrics with extreme viral outliers.
+  \item High missingness in \texttt{body} (\(53.49\%\)), largely structural by post type.
+  \item Heavy-tailed engagement metrics with extreme viral outliers (rare but influential tail behavior).
   \item Mixed temporal representations requiring consistency checks.
 \end{itemize}
 
-These properties make the dataset suitable for advanced cleaning, preprocessing, and exploratory analysis.
+These properties make the dataset suitable for advanced cleaning, preprocessing, and exploratory analysis because it requires both robust tabular handling and text-aware feature design.
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_01_missingness_diagnostics.json|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json|
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png|
+\end{itemize}

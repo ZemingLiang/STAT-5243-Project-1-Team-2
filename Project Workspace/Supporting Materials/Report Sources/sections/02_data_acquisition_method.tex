@@ -15,3 +15,13 @@ The observation window (2020--2021) captures the meme-stock period, making it su
 
 \subsection{Acquisition Constraints}
 The dataset reflects available post-level metadata and does not include direct trade execution records. As a result, downstream analysis focuses on discussion and engagement proxies rather than verified transaction behavior.
+
+\subsection{Acquisition Integrity and Reproducibility Notes}
+To preserve lineage and reproducibility, the raw CSV is retained unchanged in deliverables and every downstream transformation is executed from code/notebook workflows tracked in the repository. Data-volume and schema checks confirm consistency between raw and cleaned row counts (\(53{,}187\) rows each), indicating that quality handling was policy-based rather than deletion-heavy.
+
+Evidence:
+\begin{itemize}
+  \item Raw dataset: \verb|Project Deliverables/Datasets/reddit_wsb.csv|
+  \item Cleaned dataset: \verb|Project Deliverables/Datasets/reddit_wsb_cleaned.csv|
+  \item Integrity metrics: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json|
+\end{itemize}

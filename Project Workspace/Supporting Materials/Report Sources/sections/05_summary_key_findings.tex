@@ -1,17 +1,30 @@
 \section{Summary of Key Findings}
 
 \subsection{Dataset-Level Findings}
-The cleaned analytical dataset contains 53,187 posts and 30 variables. A large share of posts have missing body text, indicating that discussion on WSB is frequently title-driven or media-linked. Engagement metrics are strongly right-skewed, with a small number of viral posts accounting for a large share of total attention.
+The cleaned analytical dataset contains 53,187 posts and 30 variables. Missing body text is substantial (\(53.49\%\)) and was handled as structural missingness rather than random data loss. Duplicate and timestamp integrity checks reported zero duplicate IDs/full rows and zero invalid timestamps in raw input.
 
 \subsection{EDA Findings}
 The EDA results show that:
 \begin{itemize}
   \item Raw \texttt{score} and \texttt{comms\_num} distributions are highly heavy-tailed.
   \item Log-transformed engagement variables are more analytically stable and interpretable.
-  \item Engagement is positively associated across voting and comment activity.
+  \item Engagement is strongly associated across voting and comment activity (Spearman \(\rho = 0.7852\), \(p \ll 0.001\)).
+  \item Post-type engagement differences are statistically significant (Kruskal-Wallis \(H = 5855.658\), \(p \ll 0.001\)).
+  \item Extreme outliers are infrequent but non-negligible (\(|z| \ge 3\) rate \(\approx 0.173\%\)).
   \item Temporal effects are visible by posting hour, day-of-week, and event periods.
   \item Post type composition is dominated by text and image formats.
 \end{itemize}
 
+\subsection{Feature-Engineering Findings}
+Controlled ablation indicates that sentiment alone did not improve thresholded classification in this configuration, while adding topic features improved \(F1@0.5\) from \(0.876950\) to \(0.884615\) (absolute lift \(+0.007665\)). This indicates semantic topic context contributes incremental decision-quality utility for borderline viral cases.
+
 \subsection{Interpretive Summary}
-The evidence suggests that retail attention in WSB is concentrated around high-visibility posts and event-driven spikes. Most posts receive limited interaction, while a small subset drives disproportionate community engagement, consistent with viral attention dynamics in online financial discourse.
+The combined evidence suggests that retail attention in WSB is concentrated around high-visibility posts and event-driven spikes. Most posts receive limited interaction, while a small subset drives disproportionate community engagement, consistent with viral attention dynamics in online financial discourse.
+
+Evidence:
+\begin{itemize}
+  \item Cleaning diagnostics: \verb|.../artifacts/json/02_cleaning_policy_metrics.json|
+  \item EDA stats: \verb|.../artifacts/json/03_eda_advanced_stats.json|
+  \item Feature ablation: \verb|.../artifacts/json/05_feature_ablation_table.json|
+  \item Claim registry: \verb|Project Workspace/qa/evidence_registry_report_depth.json|
+\end{itemize}
