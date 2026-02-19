@@ -1,42 +1,47 @@
 {
-  "generated_at": "2026-02-19T08:16:28.615009",
+  "generated_at": "2026-02-19T08:51:18.594079",
   "gate_policy": {
     "strict_overall_pass_requires_all_checks_true": true,
-    "note": "Notebook PDF build remains environment-dependent; LaTeX fallback PDF is included for submission packaging."
+    "note": "Strict notebook-to-PDF build path is now stabilized with build_report_pdf.sh."
   },
   "checks": {
     "required_paths_exist": {
       "Project Deliverables/Datasets/reddit_wsb.csv": true,
       "Project Deliverables/Datasets/reddit_wsb_cleaned.csv": true,
       "Project Deliverables/Code Files/full_workflow.py": true,
+      "Project Deliverables/Code Files/README.md": true,
       "Project Deliverables/Code Files/requirements.txt": true,
       "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
       "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true,
-      "Project Workspace/Supporting Materials/Report Sources/main_report.tex": true,
-      "Project Workspace/Supporting Materials/Report Sources/artifacts/json/branch_source_manifest.json": true,
+      "Project Deliverables/Report/build_report_pdf.sh": true,
+      "Project Deliverables/Report/REPORT_BUILD_REQUIREMENTS.md": true,
+      "Project Deliverables/Report/CODE_REFERENCE.md": true,
+      "Project Workspace/qa/deliverables_contract_audit.json": true,
+      "Project Workspace/qa/rubric_perfect_score_matrix.json": true,
+      "Project Workspace/qa/strict_pdf_build_log.md": true,
       "Project Workspace/qa/notebook_pdf_consistency_report.md": true
     },
     "all_required_paths_exist": true,
     "section_order_exact": true,
     "figure_json_parity": {
       "02_cleaning": {
-        "png_count": 7,
-        "json_count": 7,
+        "png": 7,
+        "json": 7,
         "pass": true
       },
       "03_eda": {
-        "png_count": 19,
-        "json_count": 19,
+        "png": 19,
+        "json": 19,
         "pass": true
       },
       "04_feature": {
-        "png_count": 8,
-        "json_count": 8,
+        "png": 8,
+        "json": 8,
         "pass": true
       },
       "05_feature_ablation": {
-        "png_count": 1,
-        "json_count": 1,
+        "png": 1,
+        "json": 1,
         "pass": true
       }
     },
@@ -61,14 +66,13 @@
     "github_link_present": true,
     "all_member_contributions_present": true,
     "notebook_pdf_build": {
-      "status": "failed_in_env",
-      "strict_gate_pass": false,
-      "reason": "nbconvert with pandoc 3.x generated xelatex failure (undefined control sequence \\pandocbounded).",
-      "fallback_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
-      "fallback_method": "pdflatex build from Project Workspace/Supporting Materials/Report Sources/main_report.tex"
+      "status": "passed_strict_build_script",
+      "strict_gate_pass": true,
+      "build_script": "Project Deliverables/Report/build_report_pdf.sh",
+      "output_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"
     },
     "submission_pdf_present_via_latex_fallback": true
   },
-  "overall_pass": false,
+  "overall_pass": true,
   "delivery_pass_with_fallback": true
 }
