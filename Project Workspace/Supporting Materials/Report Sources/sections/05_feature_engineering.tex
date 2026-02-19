@@ -1,14 +1,55 @@
 \section{Feature Engineering Process and Justification}
 
-Feature engineering extends baseline metadata with behavioral and content-aware variables to improve analytical usability and predictive signal quality.
+Feature engineering extended baseline engagement/temporal predictors with text-derived signals so the pipeline could evaluate whether semantic context adds measurable utility beyond raw activity variables.
 
-\subsection{Constructed Feature Families}
+\subsection{Engineered Feature Families}
 \begin{itemize}
-  \item Temporal and engagement-derived features (existing branch baseline).
-  \item Sentiment proxy from title text using a finance-oriented rule lexicon.
-  \item Topic features from LDA over title text to capture latent discussion themes.
-  \item Interaction-ready feature matrix used for viral-classification diagnostics.
+  \item Baseline structured predictors: \texttt{score\_log}, \texttt{comms\_num\_log}, \texttt{title\_length}, \texttt{hour}, and standardized variants.
+  \item Sentiment signal: lexicon-based \texttt{sentiment\_score} from cleaned title text.
+  \item Topic signal: five LDA topic-probability columns (\texttt{topic\_0}--\texttt{topic\_4}) built from tokenized title text.
 \end{itemize}
 
-\subsection{Justification}
-These additions improve interpretability and predictive structure by incorporating both textual semantics and engagement behavior. Diagnostic plots (ROC, precision-recall, confusion matrix, calibration, and coefficient importance) provide transparent validation of feature usefulness.
+\subsection{Model Framing}
+The response variable (\texttt{viral\_flag}) is defined by the top 5\% score quantile (\texttt{virality\_threshold = 4189.4}). Diagnostics were computed using deterministic random seed 42 with train/test split sizes of 15,000/5,000 in the ablation run and 18,750/6,250 in the branch-level model diagnostics.
+
+\subsection{Ablation Evidence (Baseline vs +Sentiment vs +Topics)}
+To justify feature utility quantitatively, we ran controlled ablation experiments where only one feature family is added at a time.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Model & Feature Count & ROC-AUC & Avg Precision & F1@0.5 \\
+\midrule
+Baseline & 6 & 0.999984 & 0.999710 & 0.876950 \\
+Baseline + Sentiment & 7 & 0.999984 & 0.999710 & 0.876950 \\
+Baseline + Sentiment + Topics & 12 & 0.999975 & 0.999546 & 0.884615 \\
+\bottomrule
+\end{tabular}
+\caption{Deterministic feature ablation comparison (seed 42).}
+\end{table}
+
+Interpretation:
+\begin{itemize}
+  \item Sentiment alone produced no measurable lift on this target definition.
+  \item Adding topic features improved thresholded classification quality (\(F1@0.5\): \(0.876950 \rightarrow 0.884615\), absolute \(+0.007665\)).
+  \item Ranking metrics remained near-saturated in all settings, so utility gains are mainly in decision-threshold behavior rather than global separability.
+\end{itemize}
+
+\subsection{Why These Features Help}
+Topic probabilities encode discussion context (e.g., ticker-event clusters) that baseline engagement counts do not represent directly. This helps borderline cases near the classification threshold, where semantic framing can shift predicted virality probability enough to improve F1. Topic top terms (e.g., \texttt{gme}, \texttt{amc}, \texttt{calls}, \texttt{yolo}) are consistent with event-driven WSB attention cycles.
+
+\subsection{Tradeoffs and Limitations}
+\begin{itemize}
+  \item Near-perfect ROC-AUC values indicate this target is easy under the current feature space and may contain leakage-like structure because virality is defined from score itself.
+  \item Sentiment is lexicon-based, so finance sarcasm and contextual polarity are only partially captured.
+  \item Topic features improve threshold behavior but reduce interpretability at individual-document level without qualitative topic labeling.
+\end{itemize}
+
+Evidence:
+\begin{itemize}
+  \item Ablation JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json|
+  \item Ablation figure: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/05_feature_ablation_comparison.png|
+  \item Diagnostic ROC JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_04_roc_curve.json|
+  \item Diagnostic confusion JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_06_confusion_matrix.json|
+\end{itemize}
