@@ -35,15 +35,29 @@ DELIVERABLES_DIR = SCRIPT_DIR.parent
 REPO_ROOT = DELIVERABLES_DIR.parent
 DEFAULT_RAW = DELIVERABLES_DIR / "Datasets" / "reddit_wsb.csv"
 DEFAULT_OUT_DIR = REPO_ROOT / "Project Workspace" / "Supporting Materials" / "Generated Outputs"
+SEED = 42
+REQUIRED_RAW_COLUMNS = ["title", "body", "url", "score", "comms_num", "timestamp"]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--raw", default=str(DEFAULT_RAW))
-    parser.add_argument("--cleaned-out", default="reddit_wsb_cleaned_full_workflow.csv")
-    parser.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
-    parser.add_argument("--sample-size", type=int, default=20000)
-    return parser.parse_args()
+    parser = argparse.ArgumentParser(
+        description="Run the integrated STAT 5243 workflow (cleaning -> EDA -> feature diagnostics).",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument("--raw", default=str(DEFAULT_RAW), help="Path to the raw input CSV.")
+    parser.add_argument("--cleaned-out", default="reddit_wsb_cleaned_full_workflow.csv", help="Name of cleaned CSV output.")
+    parser.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR), help="Directory for outputs (cleaned data + artifacts).")
+    parser.add_argument("--sample-size", type=int, default=20000, help="Row sample size used for model diagnostics.")
+    args = parser.parse_args()
+    if args.sample_size <= 0:
+        parser.error("--sample-size must be a positive integer.")
+    return args
+
+
+def validate_required_columns(df: pd.DataFrame, required: list[str]) -> None:
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required input columns: {missing}")
 
 
 def clean_text(text: str) -> str:
@@ -100,7 +114,7 @@ def prepare_feature_frame(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
         topic_df = pd.DataFrame(np.zeros((len(work), 5)), columns=[f"topic_{i}" for i in range(5)])
         topic_top_terms = {f"topic_{i}": [] for i in range(5)}
     else:
-        lda = LdaModel(corpus=corpus, id2word=dictionary, num_topics=5, passes=3, random_state=42)
+        lda = LdaModel(corpus=corpus, id2word=dictionary, num_topics=5, passes=3, random_state=SEED)
         topic_probs = []
         for bow in corpus:
             dist = lda.get_document_topics(bow, minimum_probability=0.0)
@@ -114,6 +128,12 @@ def prepare_feature_frame(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
 
 def preprocess(df_raw: pd.DataFrame) -> pd.DataFrame:
     df = df_raw.copy()
+    validate_required_columns(df, REQUIRED_RAW_COLUMNS)
+
+    for col in ["score", "comms_num"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+    df = df.dropna(subset=["score", "comms_num"]).copy()
+
     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
     df = df.dropna(subset=["timestamp"]).copy()
 
@@ -191,14 +211,14 @@ def run_feature_stage(df: pd.DataFrame, out_dir: Path, sample_size: int, topic_t
     threshold = float(df["score"].quantile(0.95))
     df["viral_flag"] = (df["score"] >= threshold).astype(int)
 
-    sample = df.sample(min(sample_size, len(df)), random_state=42)
+    sample = df.sample(min(sample_size, len(df)), random_state=SEED)
     feat_cols = [
         "score_log", "comms_num_log", "title_length", "hour", "score_log_zscore", "comms_num_log_zscore", "sentiment_score"
     ] + [c for c in df.columns if c.startswith("topic_")]
     X = sample[feat_cols].fillna(0.0)
     y = sample["viral_flag"].astype(int)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=SEED, stratify=y)
     model = LogisticRegression(max_iter=1200, class_weight="balanced", solver="liblinear")
     model.fit(X_train, y_train)
     pred_prob = model.predict_proba(X_test)[:, 1]
@@ -245,11 +265,11 @@ def run_feature_ablation(df: pd.DataFrame, out_dir: Path, sample_size: int) -> d
     work = df.copy()
     threshold = float(work["score"].quantile(0.95))
     work["viral_flag"] = (work["score"] >= threshold).astype(int)
-    sample = work.sample(min(sample_size, len(work)), random_state=42)
+    sample = work.sample(min(sample_size, len(work)), random_state=SEED)
     y = sample["viral_flag"].astype(int)
 
     train_idx, test_idx = train_test_split(
-        sample.index, test_size=0.25, random_state=42, stratify=y
+        sample.index, test_size=0.25, random_state=SEED, stratify=y
     )
     y_train = y.loc[train_idx]
     y_test = y.loc[test_idx]
@@ -305,7 +325,7 @@ def run_feature_ablation(df: pd.DataFrame, out_dir: Path, sample_size: int) -> d
 
     payload = {
         "generated_at": datetime.now().isoformat(),
-        "seed": 42,
+        "seed": SEED,
         "virality_threshold": threshold,
         "train_size": int(len(train_idx)),
         "test_size": int(len(test_idx)),
@@ -322,7 +342,11 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "artifacts" / "json").mkdir(parents=True, exist_ok=True)
 
-    raw = pd.read_csv(args.raw)
+    try:
+        raw = pd.read_csv(args.raw)
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"Raw dataset not found: {args.raw}") from exc
+
     cleaned = preprocess(raw)
 
     cleaned_out = out_dir / args.cleaned_out
