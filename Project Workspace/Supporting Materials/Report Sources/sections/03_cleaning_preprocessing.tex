@@ -1,5 +1,81 @@
 \section{Cleaning and Preprocessing Steps}
 
-The cleaning workflow standardizes data types, removes formatting artifacts, evaluates duplicates, handles missingness, and stabilizes heavy-tailed engagement variables using log transforms. Additional preprocessing steps include scaling (z-score and min-max), categorical encoding, and feature derivation for downstream analysis.
+Cleaning and preprocessing were implemented as a deterministic policy pipeline to convert raw Reddit exports into analysis-ready features while preserving interpretability. The primary notebook is \texttt{Cleaning-and-Preprocessing.ipynb}, with script support in \verb|Project Workspace/Supporting Materials/Code Files/cleaning_workflow.py|.
 
-Primary implementation is documented in \texttt{Cleaning-and-Preprocessing.ipynb} and reproduced in script form in \texttt{Project Deliverables/Code Files/cleaning\_workflow.py}.
+\subsection{Type Corrections and Schema Normalization}
+Temporal fields were coerced using strict datetime parsing (\texttt{errors='coerce'}) before feature extraction. The raw dataset produced zero invalid timestamp records after coercion (\texttt{invalid\_timestamp\_count\_in\_raw = 0}; Evidence \texttt{CLN-07}), so no timestamp-row deletions were required on quality grounds. The redundant \texttt{created} field was dropped in favor of a normalized \texttt{timestamp}-based calendar representation (\texttt{date}, \texttt{hour}, \texttt{day\_of\_week}).
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json|
+  \item \verb|Project Workspace/qa/evidence_registry_report_depth.json| (claims \texttt{CLN-07}, \texttt{CLN-02})
+\end{itemize}
+
+\subsection{Missingness Strategy}
+Missingness was treated as partly structural rather than purely random. The \texttt{body} field has high missingness (\texttt{missing\_body\_pct = 53.49\%}; Evidence \texttt{CLN-01}), which is expected for title-only, media-linked, and short-form posts on WSB. Instead of dropping these rows, we preserved them and encoded information loss explicitly using:
+\begin{itemize}
+  \item \texttt{has\_body} boolean indicator
+  \item empty-string fill for text normalization pipelines (\texttt{title\_clean}, \texttt{body\_clean}, \texttt{title\_nlp})
+\end{itemize}
+This policy retains sample size while preventing missing text from silently propagating into downstream feature-generation errors.
+
+Evidence:
+\begin{itemize}
+  \item Figure: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png|
+  \item JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_01_missingness_diagnostics.json|
+  \item Registry claim: \texttt{CLN-01}
+\end{itemize}
+
+\subsection{Duplicate Handling Policy}
+Duplicate checks were run at both identifier and full-row levels. The raw and cleaned datasets both reported:
+\begin{itemize}
+  \item \texttt{duplicate id count = 0}
+  \item \texttt{duplicate full-row count = 0}
+\end{itemize}
+Given these diagnostics, no record-level deduplication was applied. The policy decision was to preserve all rows while retaining explicit duplicate-audit metadata for traceability.
+
+Evidence:
+\begin{itemize}
+  \item \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json|
+  \item Registry claim: \texttt{CLN-06}
+\end{itemize}
+
+\subsection{Outlier Policy and Transform Decisions}
+Engagement variables (\texttt{score}, \texttt{comms\_num}) were highly right-skewed with viral tails, so the pipeline used \texttt{log1p} transforms to stabilize scale and reduce leverage from extreme posts. The transformed distributions are summarized by:
+\begin{itemize}
+  \item \texttt{score\_log\_mean = 3.6440}
+  \item \texttt{comms\_num\_log\_mean = 2.8767}
+\end{itemize}
+The workflow preserves both raw and transformed variables, allowing interpretable descriptive analysis while supporting more stable modeling diagnostics.
+
+Evidence:
+\begin{itemize}
+  \item Figure: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_03_outlier_visualization.png|
+  \item Figure: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_05_qq_normality.png|
+  \item JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_03_outlier_visualization.json|
+  \item JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_05_qq_normality.json|
+  \item Registry claims: \texttt{CLN-03}, \texttt{CLN-04}
+\end{itemize}
+
+\subsection{Scaling and Encoding Rationale}
+To support downstream comparability and model-readiness, scaling was applied on selected numeric features (\texttt{score\_log}, \texttt{comms\_num\_log}, \texttt{title\_length}, \texttt{hour}) using both:
+\begin{itemize}
+  \item z-score normalization (\texttt{\_zscore})
+  \item min-max normalization (\texttt{\_minmax})
+\end{itemize}
+Dual scaling preserves flexibility across methods with different assumptions. Categorical and structural encodings were also applied:
+\begin{itemize}
+  \item \texttt{day\_of\_week\_encoded}
+  \item post-type lumping into stable groups (\texttt{post\_type\_lumped})
+  \item binary flags (\texttt{type\_image}, \texttt{type\_text})
+\end{itemize}
+
+Evidence:
+\begin{itemize}
+  \item Figure: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_07_scaling_comparison.png|
+  \item JSON: \verb|Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_fig_07_scaling_comparison.json|
+  \item Registry claims: \texttt{CLN-05}, \texttt{CLN-02}
+\end{itemize}
+
+\subsection{Post-Cleaning Result}
+After applying the above policies, the cleaned analytical table retained \texttt{53,187} rows and \texttt{30} columns, indicating that quality improvements were achieved through transformation and explicit handling policies rather than aggressive row deletion. This preserves representativeness while improving downstream analytical stability.

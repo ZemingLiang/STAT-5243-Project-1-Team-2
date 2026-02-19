@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-19T07:57:42.321970",
+  "generated_at": "2026-02-19T07:59:53.689310",
   "session": "01",
   "source_json_dir": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/json",
   "claims": [
@@ -57,6 +57,30 @@
       "metric_values": {
         "rows": 53187,
         "columns": 30
+      }
+    },
+    {
+      "claim_id": "CLN-06",
+      "section": "03_cleaning_preprocessing",
+      "claim_text": "Duplicate checks found no duplicated post IDs or duplicated full rows in raw and cleaned data.",
+      "figure_png": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png",
+      "json_source": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json",
+      "metric_values": {
+        "raw_duplicate_id_count": 0,
+        "raw_duplicate_full_row_count": 0,
+        "cleaned_duplicate_id_count": 0,
+        "cleaned_duplicate_full_row_count": 0
+      }
+    },
+    {
+      "claim_id": "CLN-07",
+      "section": "03_cleaning_preprocessing",
+      "claim_text": "Timestamp coercion produced zero invalid records, confirming temporal parse consistency.",
+      "figure_png": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/figures/02_cleaning_fig_01_missingness_diagnostics.png",
+      "json_source": "/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json",
+      "metric_values": {
+        "invalid_timestamp_count_in_raw": 0,
+        "invalid_timestamp_pct_in_raw": 0.0
       }
     },
     {
@@ -152,10 +176,10 @@
     }
   ],
   "coverage": {
-    "total_claims": 12,
-    "claims_with_figure": 12,
-    "claims_with_json_source": 12,
-    "claims_with_metric_values": 12,
+    "total_claims": 14,
+    "claims_with_figure": 14,
+    "claims_with_json_source": 14,
+    "claims_with_metric_values": 14,
     "all_claims_have_evidence": true
   }
 }
