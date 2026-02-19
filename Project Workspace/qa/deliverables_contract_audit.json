@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-19T08:36:42.352938",
+  "generated_at": "2026-02-19T09:53:53.905535",
   "session": "01",
   "plan_name": "Perfect-Score Finalization Plan for Main-Final-Deliverable",
   "branch_truth": {
@@ -25,7 +25,8 @@
       "code_requirements": "Project Deliverables/Code Files/requirements.txt",
       "code_readme": "Project Deliverables/Code Files/README.md",
       "report_notebook": "Project Deliverables/Report/Project1_Final_Submission.ipynb",
-      "report_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"
+      "report_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
+      "code_notebook_canonical": "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb"
     },
     "file_checks": {
       "dataset_raw": true,
@@ -34,7 +35,8 @@
       "code_requirements": true,
       "code_readme": true,
       "report_notebook": true,
-      "report_pdf": true
+      "report_pdf": true,
+      "code_notebook_canonical": true
     },
     "all_required_files_present": true,
     "report_section_presence": {

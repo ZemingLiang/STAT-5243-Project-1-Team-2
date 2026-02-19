@@ -3,10 +3,14 @@
 This folder keeps only the final integrated workflow code.
 
 ## Files
-- `full_workflow.py`: end-to-end workflow (load -> clean -> EDA -> feature diagnostics)
+- `Project1_Full_Workflow_Code.ipynb`: canonical one-code-file workflow notebook for grading review
+- `full_workflow.py`: end-to-end workflow script (engineering backup automation)
 - `requirements.txt`: Python dependencies
 
-## Run
+## Canonical Review Artifact
+- Use `Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb` as the primary code file for submission review.
+
+## Run (Backup Script)
 ```bash
 python3 -m pip install -r "Project Deliverables/Code Files/requirements.txt"
 python3 "Project Deliverables/Code Files/full_workflow.py"

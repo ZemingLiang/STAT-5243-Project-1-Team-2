@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-02-19T09:56:35.637586",
+  "session": "01-refresh",
+  "plan": "Max-Score Finalization Plan (One PDF + One Code Notebook, Strict Parity)",
+  "agents": {
+    "rubric_agent_A_data_selection.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    },
+    "rubric_agent_B_preprocessing.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    },
+    "rubric_agent_C_eda.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    },
+    "rubric_agent_D_feature.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    },
+    "rubric_agent_E_written_report.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    },
+    "rubric_agent_F_code_parity.json": {
+      "advanced_ready": true,
+      "gap_count": 0
+    }
+  },
+  "global_gap_count": 0,
+  "global_gaps": [],
+  "gate": {
+    "all_rubric_bullets_mapped": true,
+    "all_agents_advanced_ready": true,
+    "pass": true
+  }
+}

@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-02-19T09:18:53.963947",
+  "generated_at": "2026-02-19T09:53:53.905535",
   "target": "47/47 (Advanced across all categories)",
-  "validation_state": "evidence_validated_in_final_pdf",
+  "validation_state": "evidence_validated_in_final_pdf_and_code_notebook",
   "final_pdf_review_contract": {
     "single_pdf_path": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
-    "single_code_file_path": "Project Deliverables/Code Files/full_workflow.py"
+    "single_code_file_path": "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb",
+    "backup_code_file_path": "Project Deliverables/Code Files/full_workflow.py"
   },
   "categories": [
     {
@@ -25,7 +26,8 @@
       "status": "advanced_validated",
       "evidence": [
         "Project Deliverables/Report/Project1_Final_Submission.ipynb (Section 4 + appendix figures)",
-        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json"
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_advanced_stats.json",
+        "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb (EDA cells)"
       ]
     },
     {
@@ -35,7 +37,8 @@
       "status": "advanced_validated",
       "evidence": [
         "Project Deliverables/Report/Project1_Final_Submission.ipynb (Section 3 decision table)",
-        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json"
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_cleaning_policy_metrics.json",
+        "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb (cleaning cells)"
       ]
     },
     {
@@ -45,7 +48,8 @@
       "status": "advanced_validated",
       "evidence": [
         "Project Deliverables/Report/Project1_Final_Submission.ipynb (Section 5 + ablation table)",
-        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json"
+        "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json",
+        "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb (feature + ablation cells)"
       ]
     },
     {
@@ -55,7 +59,7 @@
       "status": "advanced_validated",
       "evidence": [
         "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
-        "Project Deliverables/Report/Project1_Final_Submission.ipynb (sections 1-9 + appendix)"
+        "Project Deliverables/Report/Project1_Final_Submission.ipynb (sections 1-9 + appendix + traceability table)"
       ]
     }
   ],

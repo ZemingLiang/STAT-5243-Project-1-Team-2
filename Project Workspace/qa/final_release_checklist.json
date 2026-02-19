@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-02-19T09:18:53.964527",
+  "generated_at": "2026-02-19T09:53:53.905535",
   "one_pdf_one_code_review_contract": {
     "enabled": true,
     "single_pdf_path": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
-    "single_code_file_path": "Project Deliverables/Code Files/full_workflow.py",
+    "single_code_file_path": "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb",
+    "backup_code_file_path": "Project Deliverables/Code Files/full_workflow.py",
     "pass": true
   },
   "critical_gates": {
@@ -12,6 +13,7 @@
       "details": {
         "Project Deliverables/Datasets/reddit_wsb.csv": true,
         "Project Deliverables/Datasets/reddit_wsb_cleaned.csv": true,
+        "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb": true,
         "Project Deliverables/Code Files/full_workflow.py": true,
         "Project Deliverables/Code Files/README.md": true,
         "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
@@ -33,15 +35,43 @@
       ]
     },
     "notebook_depth": {
-      "cells": 56,
+      "cells": 57,
       "code_cells": 5,
       "image_refs": 35,
       "pass": true
+    },
+    "placeholder_hygiene": {
+      "pass": true,
+      "hits": []
+    },
+    "claim_metric_reconciliation": {
+      "pass": true,
+      "checks": {
+        "missing_body_pct_report_match": true,
+        "spearman_rho_report_match": true,
+        "outlier_rate_report_match": true,
+        "f1_lift_report_match": true
+      },
+      "values": {
+        "missing_body_pct": 53.490515,
+        "spearman_rho": 0.785221,
+        "outlier_rate_pct": 0.172975,
+        "f1_lift": 0.007666
+      }
+    },
+    "dataset_parity_sha256": {
+      "pass": true,
+      "raw_match": true,
+      "clean_match": true
     },
     "strict_notebook_pdf_build": {
       "pass": true,
       "build_script": "Project Deliverables/Report/build_report_pdf.sh",
       "log": "Project Workspace/qa/strict_pdf_build_log.md"
+    },
+    "code_notebook_execution_check": {
+      "pass": true,
+      "executed_output": "/tmp/Project1_Full_Workflow_Code.executed.ipynb"
     },
     "rubric_perfect_matrix": {
       "pass": true,

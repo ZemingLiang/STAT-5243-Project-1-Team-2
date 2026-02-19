@@ -7,7 +7,8 @@ This branch is reorganized into two top-level folders for clarity.
 ## Submission Quick Links
 - Final PDF report: `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
 - Submission notebook: `Project Deliverables/Report/Project1_Final_Submission.ipynb`
-- Canonical full workflow code: `Project Deliverables/Code Files/full_workflow.py`
+- Canonical one-code notebook: `Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb`
+- Engineering backup script: `Project Deliverables/Code Files/full_workflow.py`
 - Raw dataset: `Project Deliverables/Datasets/reddit_wsb.csv`
 - Cleaned dataset: `Project Deliverables/Datasets/reddit_wsb_cleaned.csv`
 
@@ -16,7 +17,8 @@ This branch is reorganized into two top-level folders for clarity.
   - `reddit_wsb.csv` (raw dataset)
   - `reddit_wsb_cleaned.csv` (cleaned dataset)
 - `Project Deliverables/Code Files/`
-  - `full_workflow.py` (single integrated workflow code)
+  - `Project1_Full_Workflow_Code.ipynb` (single integrated workflow code artifact for grading)
+  - `full_workflow.py` (engineering backup script)
   - `requirements.txt`
   - `README.md` (run instructions)
 - `Project Deliverables/Report/`
@@ -39,10 +41,15 @@ python3 -m pip install -r "Project Deliverables/Code Files/requirements.txt"
 python3 "Project Deliverables/Code Files/full_workflow.py"
 ```
 
+## One-Code-File Review Artifact
+- Use `Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb` as the canonical code file for grading review.
+- Use `Project Deliverables/Code Files/full_workflow.py` as backup automation for scripted reruns.
+
 ## Reproducibility Verification
 Expected key outputs after setup/integration:
 - `Project Deliverables/Datasets/reddit_wsb.csv`
 - `Project Deliverables/Datasets/reddit_wsb_cleaned.csv`
+- `Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb`
 - `Project Deliverables/Code Files/full_workflow.py`
 - `Project Deliverables/Report/Project1_Final_Submission.ipynb`
 - `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
@@ -55,6 +62,7 @@ Single validation command:
 required=(
   "Project Deliverables/Datasets/reddit_wsb.csv"
   "Project Deliverables/Datasets/reddit_wsb_cleaned.csv"
+  "Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb"
   "Project Deliverables/Code Files/full_workflow.py"
   "Project Deliverables/Report/Project1_Final_Submission.ipynb"
   "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"

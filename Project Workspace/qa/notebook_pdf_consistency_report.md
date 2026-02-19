@@ -1,8 +1,9 @@
 # Notebook/PDF Consistency Report
 
-- Generated at: 2026-02-19T09:18:53.963664
+- Generated at: 2026-02-19T09:53:53.905535
 - Notebook: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/Project1_Final_Submission.ipynb`
 - Final PDF: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+- PDF pages: 32
 
 ## Required Section Order (Notebook)
 1. Introduction and Dataset Description
@@ -17,6 +18,9 @@
 
 ## Checks
 - Notebook section order exact: `True`
-- Report source section order exact: `True`
-- One-PDF evidence density pass (>=35 image refs): `True`
-- Code cells in notebook >= 4: `True`
+- Markdown image refs in notebook: `35`
+- Code cells in notebook: `5`
+- Placeholder tokens absent (`{json_base}`, `TODO`, `TBD`, `FIXME`): `True`
+- Claim-metric reconciliation pass: `True`
+- Canonical one-code notebook exists: `True`
+- One-code notebook execution check (`/tmp` executed output): `True`

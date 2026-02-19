@@ -1,0 +1,347 @@
+{
+  "generated_at": "2026-02-19T09:46:24.953761",
+  "session": "02",
+  "policy": {
+    "must_match": [
+      "datasets (.csv)",
+      "figures (.png)",
+      "canonical notebooks (.ipynb)",
+      "core metric JSON semantics"
+    ],
+    "allowed_upgrade": [
+      "manifest metadata",
+      "report .tex prose depth",
+      "integrated .py/.ipynb pipeline docs"
+    ],
+    "forbidden_drift": [
+      "core metric values changed without versioning"
+    ]
+  },
+  "resolution_counts": {
+    "total_mismatches": 35,
+    "must_match": 11,
+    "allowed_upgrade": 24,
+    "forbidden_drift": 0
+  },
+  "rows": [
+    {
+      "branch": "Cleaning-and-Preprocessing",
+      "source": "artifacts/json/03_cleaning_preprocessing_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_cleaning_preprocessing_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Cleaning-and-Preprocessing",
+      "source": "artifacts/json/03_cleaning_preprocessing_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_cleaning_preprocessing_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Cleaning-and-Preprocessing",
+      "source": "code/cleaning_workflow.py",
+      "dest": "Project Workspace/Supporting Materials/Code Files/cleaning_workflow.py",
+      "ext": ".py",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Cleaning-and-Preprocessing",
+      "source": "report/sections/03_cleaning_preprocessing.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/03_cleaning_preprocessing.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "artifacts/json/03_eda_fig_17_daily_outlier_count.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_fig_17_daily_outlier_count.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "artifacts/json/03_eda_fig_18_hour_day_heatmap.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_fig_18_hour_day_heatmap.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "artifacts/json/03_eda_fig_19_post_type_median_iqr.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/03_eda_fig_19_post_type_median_iqr.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "artifacts/json/04_eda_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_eda_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "artifacts/json/04_eda_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_eda_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "code/eda_workflow.py",
+      "dest": "Project Workspace/Supporting Materials/Code Files/eda_workflow.py",
+      "ext": ".py",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Exploratory-Data-Analysis-(EDA)",
+      "source": "report/sections/04_eda.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/04_eda.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_01_sentiment_distribution.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_01_sentiment_distribution.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_02_topic_entropy_distribution.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_02_topic_entropy_distribution.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_03_dominant_topic_distribution.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_03_dominant_topic_distribution.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_04_roc_curve.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_04_roc_curve.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_05_pr_curve.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_05_pr_curve.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_06_confusion_matrix.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_06_confusion_matrix.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_07_pred_prob_distribution.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_07_pred_prob_distribution.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/04_feature_fig_08_top_coefficients.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/04_feature_fig_08_top_coefficients.json",
+      "ext": ".json",
+      "policy_class": "must_match",
+      "status": "resolved",
+      "reason": "Core JSON semantics match after stripping volatile metadata."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/05_feature_engineering_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_engineering_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "artifacts/json/05_feature_engineering_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_engineering_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "code/feature_enhancement_workflow.py",
+      "dest": "Project Workspace/Supporting Materials/Code Files/feature_enhancement_workflow.py",
+      "ext": ".py",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Feature-Engineering-&-Justification",
+      "source": "report/sections/05_feature_engineering.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/05_feature_engineering.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Intro-&-Dataset-Description",
+      "source": "artifacts/json/01_intro_data_description_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/01_intro_data_description_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Intro-&-Dataset-Description",
+      "source": "artifacts/json/01_intro_data_description_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/01_intro_data_description_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Intro-&-Dataset-Description",
+      "source": "report/sections/01_intro_data_description.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/01_intro_data_description.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Data-Acquisition-Method",
+      "source": "artifacts/json/02_data_acquisition_method_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_data_acquisition_method_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Data-Acquisition-Method",
+      "source": "artifacts/json/02_data_acquisition_method_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/02_data_acquisition_method_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Data-Acquisition-Method",
+      "source": "report/sections/02_data_acquisition_method.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/02_data_acquisition_method.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Summary-of-Findings",
+      "source": "artifacts/json/05_summary_key_findings_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_summary_key_findings_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Summary-of-Findings",
+      "source": "artifacts/json/05_summary_key_findings_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_summary_key_findings_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Summary-of-Findings",
+      "source": "report/sections/05_summary_key_findings.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/05_summary_key_findings.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    },
+    {
+      "branch": "Challenges-Faced-&-Future-Recommendations",
+      "source": "artifacts/json/06_challenges_future_recommendations_manifest.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/06_challenges_future_recommendations_manifest.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Manifest drift allowed for release provenance and expanded artifact lists."
+    },
+    {
+      "branch": "Challenges-Faced-&-Future-Recommendations",
+      "source": "artifacts/json/06_challenges_future_recommendations_summary.json",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/artifacts/json/06_challenges_future_recommendations_summary.json",
+      "ext": ".json",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Section-level summary JSON drift allowed for enriched narrative and final branch integration context."
+    },
+    {
+      "branch": "Challenges-Faced-&-Future-Recommendations",
+      "source": "report/sections/06_challenges_future_recommendations.tex",
+      "dest": "Project Workspace/Supporting Materials/Report Sources/sections/06_challenges_future_recommendations.tex",
+      "ext": ".tex",
+      "policy_class": "allowed_upgrade",
+      "status": "resolved",
+      "reason": "Narrative/code enrichment allowed in final integration branch under high-impact policy."
+    }
+  ],
+  "gate": {
+    "zero_unresolved_forbidden_drift": true,
+    "pass": true
+  }
+}
