@@ -32,8 +32,9 @@ NEG_WORDS = {
 }
 SCRIPT_DIR = Path(__file__).resolve().parent
 DELIVERABLES_DIR = SCRIPT_DIR.parent
+REPO_ROOT = DELIVERABLES_DIR.parent
 DEFAULT_RAW = DELIVERABLES_DIR / "Datasets" / "reddit_wsb.csv"
-DEFAULT_OUT_DIR = DELIVERABLES_DIR / "Report"
+DEFAULT_OUT_DIR = REPO_ROOT / "Project Workspace" / "Supporting Materials" / "Generated Outputs"
 
 
 def parse_args() -> argparse.Namespace:
