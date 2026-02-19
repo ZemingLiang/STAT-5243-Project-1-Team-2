@@ -1,0 +1,19 @@
+\section{Introduction and Dataset Description}
+
+\subsection{Introduction}
+The rise of online social platforms has reshaped modern financial markets by expanding access to information and collective participation. The Reddit community \texttt{r/WallStreetBets} (WSB) became a major retail-investor forum during 2020--2021, especially throughout the meme-stock period. This project analyzes WSB post activity to study how online attention is reflected in engagement behavior.
+
+Our objective is to transform raw social-media data into a reliable analytical dataset and derive interpretable insights about investor discussion patterns. The analysis is designed as a complete data-science workflow, from acquisition through preprocessing, EDA, feature engineering, and report synthesis.
+
+\subsection{Dataset Description}
+The dataset contains 53,187 WSB posts, where each row corresponds to one Reddit submission. Core variables include \texttt{title}, \texttt{score}, \texttt{id}, \texttt{url}, \texttt{comms\_num}, \texttt{created}, \texttt{body}, and \texttt{timestamp}. The dataset combines numerical engagement metrics, unstructured text, and temporal metadata.
+
+The raw data has notable real-world complexity:
+\begin{itemize}
+  \item Unstructured text with markdown, URLs, and internet slang.
+  \item High missingness in \texttt{body}, largely structural by post type.
+  \item Heavy-tailed engagement metrics with extreme viral outliers.
+  \item Mixed temporal representations requiring consistency checks.
+\end{itemize}
+
+These properties make the dataset suitable for advanced cleaning, preprocessing, and exploratory analysis.
