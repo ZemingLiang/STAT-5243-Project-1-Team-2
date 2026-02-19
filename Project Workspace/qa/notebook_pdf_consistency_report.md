@@ -1,9 +1,9 @@
 # Notebook/PDF Consistency Report
 
-- Generated at: 2026-02-19T08:13:57.334054
+- Generated at: 2026-02-19T08:49:55.552322
 - Notebook: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/Project1_Final_Submission.ipynb`
 - Report source: `/Users/m2/Projects/STAT 5243/Project 1/Project Workspace/Supporting Materials/Report Sources/main_report.tex`
-- Final PDF: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf` (288568 bytes)
+- Final PDF: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf` (220183 bytes)
 
 ## Expected Assignment Section Order
 1. Introduction and dataset description
@@ -43,7 +43,5 @@
 - PDF source order matches expected: `True`
 - Notebook/PDF source orders identical: `True`
 
-## Synchronization Notes
-- Updated notebook sections 3-5 with exact cleaning, EDA, and feature-ablation metrics to match report depth improvements.
-- Added explicit evidence references in notebook text consistent with artifact paths used in report sources.
-- Rebuilt `STAT5243_Project1_Team2_Final.pdf` from `main_report.tex` after Session 5-6 updates.
+## Build Path
+- Final PDF regenerated via strict notebook->PDF script: `Project Deliverables/Report/build_report_pdf.sh`.
