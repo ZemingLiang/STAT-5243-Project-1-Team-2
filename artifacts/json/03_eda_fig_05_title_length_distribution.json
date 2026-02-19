@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_05",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Distribution of title_length",
+  "caption": "Distribution of title_length",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.266995"
+}

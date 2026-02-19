@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_11",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Relationship: title_length vs score_log",
+  "caption": "Relationship: title_length vs score_log",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.269312"
+}

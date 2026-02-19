@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_13",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Trend: Mean comms_num_log by hour of day",
+  "caption": "Trend: Mean comms_num_log by hour of day",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.270240"
+}

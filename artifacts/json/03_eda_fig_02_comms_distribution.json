@@ -1,0 +1,12 @@
+{
+  "figure_id": "03_eda_fig_02",
+  "branch": "Exploratory-Data-Analysis-(EDA)",
+  "source_file": "Exploratory Data Analysis EDA.ipynb",
+  "title": "Distribution of comms_num",
+  "caption": "Distribution of comms_num",
+  "input_data": [
+    "reddit_wsb_cleaned.csv"
+  ],
+  "key_stats": {},
+  "created_at": "2026-02-19T07:02:21.265624"
+}

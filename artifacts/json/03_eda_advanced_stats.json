@@ -1,0 +1,11 @@
+{
+  "spearman_score_vs_comments": {
+    "rho": 0.785220719966194,
+    "p_value": 0.0
+  },
+  "kruskal_score_by_post_type": {
+    "statistic": 5855.6579978108875,
+    "p_value": 0.0
+  },
+  "score_log_outlier_rate_abs_ge_3": 0.0017297459905616034
+}
