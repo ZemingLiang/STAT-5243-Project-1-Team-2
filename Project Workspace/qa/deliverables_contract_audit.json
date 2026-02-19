@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-19T08:36:11.682899",
-  "session": "00",
+  "generated_at": "2026-02-19T08:36:42.352938",
+  "session": "01",
   "plan_name": "Perfect-Score Finalization Plan for Main-Final-Deliverable",
   "branch_truth": {
     "release_branch": "Main-Final-Deliverable",
@@ -16,5 +16,50 @@
     "deliverables_contract_file_initialized": true,
     "pass": true
   },
-  "next_session": "01_deliverables_contract_audit"
+  "next_session": "02_readme_front_priority",
+  "assignment_contract_audit": {
+    "required_files": {
+      "dataset_raw": "Project Deliverables/Datasets/reddit_wsb.csv",
+      "dataset_cleaned": "Project Deliverables/Datasets/reddit_wsb_cleaned.csv",
+      "code_full_workflow": "Project Deliverables/Code Files/full_workflow.py",
+      "code_requirements": "Project Deliverables/Code Files/requirements.txt",
+      "code_readme": "Project Deliverables/Code Files/README.md",
+      "report_notebook": "Project Deliverables/Report/Project1_Final_Submission.ipynb",
+      "report_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"
+    },
+    "file_checks": {
+      "dataset_raw": true,
+      "dataset_cleaned": true,
+      "code_full_workflow": true,
+      "code_requirements": true,
+      "code_readme": true,
+      "report_notebook": true,
+      "report_pdf": true
+    },
+    "all_required_files_present": true,
+    "report_section_presence": {
+      "Introduction and Dataset Description": true,
+      "Data Acquisition Methodology": true,
+      "Cleaning and Preprocessing Steps": true,
+      "Exploratory Data Analysis (EDA)": true,
+      "Feature Engineering Process and Justification": true,
+      "Summary of Key Findings": true,
+      "Challenges Faced and Future Recommendations": true,
+      "GitHub Repository Link": true,
+      "Each Member's Contribution": true
+    },
+    "report_section_order_exact": true,
+    "github_link_present": true,
+    "member_contributions_present": {
+      "Zeming Liang": true,
+      "Zuer Weng": true,
+      "Duoli Chen": true,
+      "Isaac Beers": true
+    },
+    "all_member_contributions_present": true
+  },
+  "session1_gate": {
+    "all_assignment_deliverable_items_pass": true,
+    "pass": true
+  }
 }
