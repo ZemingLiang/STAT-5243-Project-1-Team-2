@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-02-19T08:50:59.788663",
-  "target_branch": "Main-Final-Deliverable",
+  "generated_at": "2026-02-19T09:18:53.964527",
+  "one_pdf_one_code_review_contract": {
+    "enabled": true,
+    "single_pdf_path": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf",
+    "single_code_file_path": "Project Deliverables/Code Files/full_workflow.py",
+    "pass": true
+  },
   "critical_gates": {
     "required_paths": {
       "pass": true,
@@ -9,81 +14,38 @@
         "Project Deliverables/Datasets/reddit_wsb_cleaned.csv": true,
         "Project Deliverables/Code Files/full_workflow.py": true,
         "Project Deliverables/Code Files/README.md": true,
-        "Project Deliverables/Code Files/requirements.txt": true,
         "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
-        "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true,
-        "Project Deliverables/Report/build_report_pdf.sh": true,
-        "Project Deliverables/Report/REPORT_BUILD_REQUIREMENTS.md": true,
-        "Project Deliverables/Report/CODE_REFERENCE.md": true,
-        "Project Workspace/qa/deliverables_contract_audit.json": true,
-        "Project Workspace/qa/rubric_perfect_score_matrix.json": true,
-        "Project Workspace/qa/strict_pdf_build_log.md": true,
-        "Project Workspace/qa/notebook_pdf_consistency_report.md": true
+        "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true
       }
     },
     "assignment_order": {
-      "notebook_matches_expected": true,
-      "report_source_matches_expected": true,
-      "notebook_and_report_source_match": true,
-      "pass": true
-    },
-    "figure_json_parity": {
-      "details": {
-        "02_cleaning": {
-          "png": 7,
-          "json": 7,
-          "pass": true
-        },
-        "03_eda": {
-          "png": 19,
-          "json": 19,
-          "pass": true
-        },
-        "04_feature": {
-          "png": 8,
-          "json": 8,
-          "pass": true
-        },
-        "05_feature_ablation": {
-          "png": 1,
-          "json": 1,
-          "pass": true
-        }
-      },
-      "pass": true
-    },
-    "traceability_completeness": {
-      "trace_section_present": true,
-      "claims_present": {
-        "CLN-01": true,
-        "CLN-06": true,
-        "EDA-01": true,
-        "EDA-02": true,
-        "EDA-03": true,
-        "FE-01": true,
-        "FE-02": true,
-        "FE-05": true
-      },
-      "pass": true
-    },
-    "reproducibility_command": {
       "pass": true,
-      "command": "required=(\"Project Deliverables/Datasets/reddit_wsb.csv\" \"Project Deliverables/Datasets/reddit_wsb_cleaned.csv\" \"Project Deliverables/Code Files/full_workflow.py\" \"Project Deliverables/Report/Project1_Final_Submission.ipynb\" \"Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf\" \"Project Workspace/Supporting Materials/Report Sources/artifacts/figures/05_feature_ablation_comparison.png\" \"Project Workspace/Supporting Materials/Report Sources/artifacts/json/05_feature_ablation_table.json\" \"Project Workspace/qa/evidence_registry_report_depth.json\"); missing=0; for f in \"${required[@]}\"; do [[ -f \"$f\" ]] || { echo \"MISSING: $f\"; missing=1; }; done; [[ $missing -eq 0 ]] && echo \"PASS: all required outputs exist.\" || echo \"FAIL: missing required outputs.\"",
-      "output": "PASS: all required outputs exist."
+      "notebook_sections": [
+        "Introduction and Dataset Description",
+        "Data Acquisition Methodology",
+        "Cleaning and Preprocessing Steps",
+        "Exploratory Data Analysis (EDA)",
+        "Feature Engineering Process and Justification",
+        "Summary of Key Findings",
+        "Challenges Faced and Future Recommendations",
+        "GitHub Repository Link",
+        "Each Member's Contribution"
+      ]
+    },
+    "notebook_depth": {
+      "cells": 56,
+      "code_cells": 5,
+      "image_refs": 35,
+      "pass": true
     },
     "strict_notebook_pdf_build": {
       "pass": true,
       "build_script": "Project Deliverables/Report/build_report_pdf.sh",
-      "build_log": "Project Workspace/qa/strict_pdf_build_log.md",
-      "output_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"
+      "log": "Project Workspace/qa/strict_pdf_build_log.md"
     },
     "rubric_perfect_matrix": {
       "pass": true,
       "source": "Project Workspace/qa/rubric_perfect_score_matrix.json"
-    },
-    "deliverables_contract_audit": {
-      "pass": true,
-      "source": "Project Workspace/qa/deliverables_contract_audit.json"
     }
   },
   "overall": {

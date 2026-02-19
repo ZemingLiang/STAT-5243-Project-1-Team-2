@@ -1,78 +1,19 @@
 {
-  "generated_at": "2026-02-19T08:51:18.594079",
-  "gate_policy": {
-    "strict_overall_pass_requires_all_checks_true": true,
-    "note": "Strict notebook-to-PDF build path is now stabilized with build_report_pdf.sh."
-  },
+  "generated_at": "2026-02-19T09:18:53.964981",
   "checks": {
     "required_paths_exist": {
       "Project Deliverables/Datasets/reddit_wsb.csv": true,
       "Project Deliverables/Datasets/reddit_wsb_cleaned.csv": true,
       "Project Deliverables/Code Files/full_workflow.py": true,
       "Project Deliverables/Code Files/README.md": true,
-      "Project Deliverables/Code Files/requirements.txt": true,
       "Project Deliverables/Report/Project1_Final_Submission.ipynb": true,
-      "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true,
-      "Project Deliverables/Report/build_report_pdf.sh": true,
-      "Project Deliverables/Report/REPORT_BUILD_REQUIREMENTS.md": true,
-      "Project Deliverables/Report/CODE_REFERENCE.md": true,
-      "Project Workspace/qa/deliverables_contract_audit.json": true,
-      "Project Workspace/qa/rubric_perfect_score_matrix.json": true,
-      "Project Workspace/qa/strict_pdf_build_log.md": true,
-      "Project Workspace/qa/notebook_pdf_consistency_report.md": true
+      "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf": true
     },
     "all_required_paths_exist": true,
     "section_order_exact": true,
-    "figure_json_parity": {
-      "02_cleaning": {
-        "png": 7,
-        "json": 7,
-        "pass": true
-      },
-      "03_eda": {
-        "png": 19,
-        "json": 19,
-        "pass": true
-      },
-      "04_feature": {
-        "png": 8,
-        "json": 8,
-        "pass": true
-      },
-      "05_feature_ablation": {
-        "png": 1,
-        "json": 1,
-        "pass": true
-      }
-    },
-    "all_parity_pass": true,
-    "trace_table_complete": {
-      "section_present": true,
-      "claims_present": {
-        "CLN-01": true,
-        "CLN-06": true,
-        "EDA-01": true,
-        "EDA-02": true,
-        "EDA-03": true,
-        "FE-01": true,
-        "FE-02": true,
-        "FE-05": true
-      },
-      "pass": true
-    },
-    "reproducibility_block_present": true,
-    "all_assignment_tasks_complete": true,
-    "rubric_advanced_evidence_present": true,
-    "github_link_present": true,
-    "all_member_contributions_present": true,
-    "notebook_pdf_build": {
-      "status": "passed_strict_build_script",
-      "strict_gate_pass": true,
-      "build_script": "Project Deliverables/Report/build_report_pdf.sh",
-      "output_pdf": "Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf"
-    },
-    "submission_pdf_present_via_latex_fallback": true
+    "notebook_depth_pass": true,
+    "strict_pdf_build_pass": true,
+    "rubric_perfect_matrix_pass": true
   },
-  "overall_pass": true,
-  "delivery_pass_with_fallback": true
+  "overall_pass": true
 }

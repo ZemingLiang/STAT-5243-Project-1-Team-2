@@ -1,24 +1,15 @@
 # Strict Notebook-to-PDF Build Log
 
-- Generated at: 2026-02-19
+- Generated at: 2026-02-19T09:18:53.963061
 - Branch: `Main-Final-Deliverable`
 - Build script: `Project Deliverables/Report/build_report_pdf.sh`
-- Notebook source: `Project Deliverables/Report/Project1_Final_Submission.ipynb`
-- Output PDF: `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+- Result: `PASS`
+- One-PDF contract check: expanded notebook compiled into final PDF with core + appendix evidence figures.
+- Notebook metrics: `cells=56`, `code_cells=5`, `image_refs=35`
+- Final PDF path: `/Users/m2/Projects/STAT 5243/Project 1/Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+- Final PDF size (bytes): `1538378`
 
-## Toolchain Snapshot
-- `python3`: `3.10.9`
-- `nbconvert`: `6.5.4`
-- `pandoc`: `3.3`
-- `xelatex`: `XeTeX 3.141592653-2.6-0.999996 (TeX Live 2024)`
-
-## Executed Command
+## Command
 ```bash
 "Project Deliverables/Report/build_report_pdf.sh"
 ```
-
-## Result
-- `PASS`: strict notebook-to-PDF build completed successfully.
-- Compatibility macro injection for `\pandocbounded` was applied automatically by the script before LaTeX compilation.
-- Final PDF regenerated at:
-  - `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
