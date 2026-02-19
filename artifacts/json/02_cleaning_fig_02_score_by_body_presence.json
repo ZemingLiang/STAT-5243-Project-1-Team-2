@@ -1,7 +1,7 @@
 {
   "figure_id": "02_cleaning_fig_02",
   "branch": "Cleaning-and-Preprocessing",
-  "source_file": "Project1.ipynb",
+  "source_file": "Cleaning-and-Preprocessing.ipynb",
   "title": "Score by body presence",
   "caption": "Score distribution split by body presence indicator.",
   "input_data": [

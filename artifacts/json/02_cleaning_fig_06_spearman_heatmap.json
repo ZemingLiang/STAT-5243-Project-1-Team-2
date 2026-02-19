@@ -1,7 +1,7 @@
 {
   "figure_id": "02_cleaning_fig_06",
   "branch": "Cleaning-and-Preprocessing",
-  "source_file": "Project1.ipynb",
+  "source_file": "Cleaning-and-Preprocessing.ipynb",
   "title": "Spearman correlation heatmap",
   "caption": "Correlation structure used as preprocessing diagnostic.",
   "input_data": [

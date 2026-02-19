@@ -3,7 +3,7 @@
   "branch": "Cleaning-and-Preprocessing",
   "inputs": [
     "reddit_wsb.csv",
-    "Project1.ipynb"
+    "Cleaning-and-Preprocessing.ipynb"
   ],
   "methods": [
     "Data-type reconciliation",

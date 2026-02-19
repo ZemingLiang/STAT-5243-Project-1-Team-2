@@ -1,7 +1,7 @@
 {
   "figure_id": "02_cleaning_fig_03",
   "branch": "Cleaning-and-Preprocessing",
-  "source_file": "Project1.ipynb",
+  "source_file": "Cleaning-and-Preprocessing.ipynb",
   "title": "Outlier diagnostics",
   "caption": "Outlier boxplot/histogram diagnostics for engagement variables.",
   "input_data": [

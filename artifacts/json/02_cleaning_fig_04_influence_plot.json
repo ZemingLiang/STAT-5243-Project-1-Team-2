@@ -1,7 +1,7 @@
 {
   "figure_id": "02_cleaning_fig_04",
   "branch": "Cleaning-and-Preprocessing",
-  "source_file": "Project1.ipynb",
+  "source_file": "Cleaning-and-Preprocessing.ipynb",
   "title": "Influence diagnostics",
   "caption": "Residual vs leverage influence visualization.",
   "input_data": [
