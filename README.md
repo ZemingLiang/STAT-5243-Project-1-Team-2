@@ -1,4 +1,10 @@
-READ REPORT PDF FIRST: `Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf`
+# DELIVERABLES:
+# PROJECT PDF: Project Deliverables/Report/STAT5243_Project1_Team2_Final.pdf
+# PROJECT CODE: Project Deliverables/Code Files/Project1_Full_Workflow_Code.ipynb
+# ORIGINAL DATASET: Project Deliverables/Datasets/reddit_wsb.csv
+# CLEANNED DATASET: Project Deliverables/Datasets/reddit_wsb_cleaned.csv
+
+Read Main-Final-Deliverable branch only, all other branches are old drafts.
 
 # STAT-5243-Project-1-Team-2
 
