@@ -19,21 +19,34 @@ done
 cd "${SCRIPT_DIR}"
 
 echo "[strict-build] converting notebook to latex"
-jupyter nbconvert --to latex "${NOTEBOOK_PATH}" --output "${TMP_BASENAME}"
+jupyter nbconvert --to latex "${NOTEBOOK_PATH}" --output "${TMP_BASENAME}" \
+  --TagRemovePreprocessor.enabled=True \
+  --TagRemovePreprocessor.remove_cell_tags='["hide"]'
 
-echo "[strict-build] injecting pandoc compatibility macro if needed"
+echo "[strict-build] injecting pandoc compatibility macro + image sizing"
 python3 - <<'PY'
 from pathlib import Path
+import re
 
 tex_path = Path("_nb_strict_build.tex")
 text = tex_path.read_text()
+
+# 1) Pandoc 3.x compatibility
 macro = "\\providecommand{\\pandocbounded}[1]{#1}\n"
 if "\\providecommand{\\pandocbounded}" not in text:
     idx = text.find("\\begin{document}")
     if idx == -1:
         raise SystemExit("ERROR: \\begin{document} not found in generated LaTeX")
     text = text[:idx] + macro + text[idx:]
-    tex_path.write_text(text)
+
+# 2) Shrink all images to 60% textwidth for compact PDF
+text = re.sub(
+    r'\\includegraphics(\[.*?\])?\{',
+    r'\\includegraphics[width=0.60\\textwidth]{',
+    text
+)
+
+tex_path.write_text(text)
 PY
 
 echo "[strict-build] compiling xelatex pass 1"
